@@ -1,0 +1,43 @@
+/* Isolated local preview: artwork first, original project copy follows. */
+body.story-first .coffee-top {
+ width:min(1156px,calc(100% - 96px));
+ min-height:0;
+ margin-inline:auto;
+ padding:24px 0 12px;
+}
+body.story-first .coffee-top .project-kicker { margin:18px 0 10px; max-width:none; }
+body.story-first .story-title-row { display:flex; align-items:baseline; justify-content:space-between; gap:24px; }
+body.story-first .story-title-row h1 { max-width:none; margin:0; font-size:clamp(24px,2.6vw,34px); line-height:1.35; }
+body.story-first .story-information-jump { flex:none; color:#6c7f9d; font-size:11px; line-height:1.8; letter-spacing:.03em; padding-block:5px; border-bottom:1px solid #9bb5d346; text-decoration:none; scroll-margin-top:90px; }
+body.story-first .story-information-jump:hover { color:#3f6288; border-color:#9bb5d3; }
+body.story-first .story-information-jump:focus-visible { outline:2px solid #779bc4; outline-offset:5px; }
+body.story-first .coffee-top .project-subtitle,
+body.story-first .coffee-top .coffee-guide,
+body.story-first .coffee-top-scenery,
+body.story-first .coffee-decor-top,
+body.story-first .coffee-design-heading>p,
+body.story-first .curated-guide>p { display:none; }
+body.story-first .coffee-design-gallery { padding-top:12px; padding-bottom:8px; }
+body.story-first .curated-gallery { padding-block:12px 24px; }
+body.story-first .curated-intro { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:12px; }
+body.story-first .curated-guide>img { width:44px; height:52px; }
+body.story-first .coffee-information { padding-top:24px; scroll-margin-top:92px; }
+body.story-first .coffee-information:focus { outline:none; }
+body.story-first .project-next { width:min(1156px,calc(100% - 96px)); margin:24px auto 30px; }
+@media(min-width:1024px){
+ body.gallery-curated-page.story-first .curated-intro { margin-bottom:4px; }
+ body.gallery-curated-page.story-first .curated-guide>img { width:40px; height:48px; }
+}
+@media(max-width:760px){
+ body.story-first .coffee-top { width:calc(100% - 40px); padding:18px 0 8px; }
+ body.story-first .coffee-top .project-kicker { margin:15px 0 8px; font-size:9px; }
+ body.story-first .story-title-row { flex-wrap:wrap; gap:7px 18px; }
+ body.story-first .story-title-row h1 { flex-basis:100%; font-size:clamp(15px,4.6vw,22px); letter-spacing:-.035em; white-space:nowrap; }
+ body.story-first .story-information-jump { margin-left:auto; font-size:10px; padding-block:1px; }
+ body.story-first .coffee-design-gallery { padding-top:8px; }
+ body.story-first .curated-gallery { padding-block:8px 20px; }
+ body.story-first .curated-guide>img { width:36px; height:44px; }
+ body.story-first .curated-count { font-size:9px; }
+ body.story-first .coffee-information { padding-top:18px; scroll-margin-top:82px; }
+ body.story-first .project-next { width:calc(100% - 40px); margin:16px auto 24px; }
+}
