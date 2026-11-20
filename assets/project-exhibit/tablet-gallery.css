@@ -1,0 +1,79 @@
+/* Give the artwork the available tablet width while keeping its natural ratio. */
+@media (min-width: 740px) and (max-width: 1400px) and (min-height: 560px) and (any-pointer: coarse) {
+  body.gallery-curated-page .curated-gallery {
+    width: calc(100% - 2 * clamp(20px, 3.2vw, 44px));
+  }
+}
+
+@media (min-width: 740px) and (max-width: 1023px) and (min-height: 560px) and (any-pointer: coarse) {
+  body.gallery-curated-page[data-mobile-exhibit="album"] .mobile-album {
+    max-width: none;
+  }
+
+  body.gallery-curated-page[data-mobile-exhibit="album"] .album-stage {
+    aspect-ratio: var(--tablet-album-ratio, 10 / 7);
+  }
+  /* Keep a steady viewing area across the series, including mixed-format projects. */
+  body[data-tablet-album="mixed"] {
+    --tablet-album-ratio: 1;
+  }
+  body[data-tablet-album="portrait"] {
+    --tablet-album-ratio: 4 / 5;
+  }
+  body.gallery-curated-page[data-tablet-album] .album-stage {
+    max-height: 82vh;
+    max-height: 82svh;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1400px) and (min-height: 560px) and (any-pointer: coarse) {
+  body.gallery-curated-page[data-desktop-layout="depth"] .study-depth {
+    width: 100%;
+  }
+
+  body.gallery-curated-page[data-desktop-layout="depth"] .depth-stage {
+    --depth-stage-height: min(calc(51vw + 34px), 80vh);
+    --depth-stage-height: min(calc(51vw + 34px), 80svh);
+    --tablet-art-height: calc(var(--depth-stage-height) - 34px);
+    --depth-main-width: min(84cqw, calc(var(--tablet-art-height) * var(--depth-current-ratio)));
+    --depth-reveal: 6.8cqw;
+  }
+  body.gallery-curated-page[data-tablet-album] .depth-stage {
+    --depth-reveal: clamp(6.8cqw, calc((100cqw - var(--depth-main-width)) * .36), 20cqw);
+  }
+  body.gallery-curated-page[data-tablet-album="portrait"] .depth-stage {
+    --depth-stage-height: min(100vw, 84vh);
+    --depth-stage-height: min(100vw, 84svh);
+  }
+  @media (orientation: portrait) {
+    body.gallery-curated-page[data-tablet-album="mixed"] .depth-stage {
+      --depth-stage-height: min(78vw, 80vh);
+      --depth-stage-height: min(78vw, 80svh);
+    }
+  }
+
+  /* Balance the two visible prints at each end of the series. */
+  .depth-stage:has(.depth-current:first-of-type) { --stack-center: calc(50% - var(--depth-reveal) / 2); }
+  .depth-stage:has(.depth-current:last-of-type) { --stack-center: calc(50% + var(--depth-reveal) / 2); }
+
+  body.gallery-curated-page[data-desktop-layout="depth"] .depth-card {
+    --depth-card-width: min(84cqw, calc(var(--tablet-art-height) * var(--depth-ratio)));
+    left: var(--stack-center, 50%);
+    bottom: 22px;
+  }
+
+  body.gallery-curated-page[data-desktop-layout="depth"] .depth-stage::before {
+    left: var(--stack-center, 50%);
+    bottom: 0;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    body.gallery-curated-page[data-desktop-layout="depth"] .depth-card {
+      transition-property: transform, opacity, visibility, left;
+      transition-duration: .6s, .45s, 0s, .6s;
+    }
+    body.gallery-curated-page[data-desktop-layout="depth"] .depth-stage::before {
+      transition: width .6s ease, left .6s ease;
+    }
+  }
+}

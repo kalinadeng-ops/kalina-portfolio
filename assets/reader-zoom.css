@@ -1,0 +1,35 @@
+/* Shared viewing controls, using the portfolio's existing exhibition chrome. */
+.reader-zoom-tools { display:flex; align-items:center; gap:8px; }
+.reader-zoom-stepper { position:relative; display:flex; align-items:center; border:1px solid #ffffffd9; border-radius:13px; background:#f7faffb8; box-shadow:inset 0 1px 2px #fff; }
+.reader-scale-step,.reader-scale-trigger { appearance:none; border:0; background:none; color:#4d6a8d; min-height:42px; padding:0; font:inherit; cursor:pointer; }
+.reader-scale-step { width:36px; font-size:21px; line-height:1; }
+.reader-scale-trigger { display:flex; align-items:center; justify-content:center; gap:6px; min-width:77px; font-size:12px; font-variant-numeric:tabular-nums; }
+.reader-scale-trigger svg { width:12px; height:12px; fill:none; stroke:currentColor; stroke-width:1.3; stroke-linecap:round; stroke-linejoin:round; }
+.reader-scale-step:disabled,.reader-scale-fit:disabled { opacity:.4; cursor:default; }
+.reader-scale-fit { min-width:54px; padding-inline:12px; }
+.reader-scale-menu { position:absolute; z-index:10; top:calc(100% + 8px); right:0; width:170px; padding:6px; border:1px solid #fff; border-radius:14px; background:#f7f9ff; box-shadow:0 12px 30px #425e8229; }
+.reader-scale-menu[hidden] { display:none; }
+.reader-scale-option { display:flex; justify-content:space-between; align-items:center; width:100%; min-height:40px; border:0; border-radius:8px; background:none; padding:8px 12px; color:#526e8f; font:500 12px/1.4 system-ui,"PingFang SC","Microsoft YaHei",sans-serif; text-align:left; cursor:pointer; }
+.reader-scale-option small { font-size:10px; color:#8091a9; }
+.reader-scale-option[aria-selected="true"] { background:#dfebfa; color:#304f79; }
+.reader-scale-option:hover { background:#e8eef9; }
+.reader-scale-option:focus-visible,.reader-scale-trigger:focus-visible,.reader-scale-step:focus-visible { outline:2px solid #749dc8; outline-offset:-3px; border-radius:9px; }
+.has-image-zoom .reader-header { position:relative; z-index:5; }
+.has-image-zoom .reader-image-viewport { position:relative; overflow:hidden; touch-action:none; -webkit-user-select:none; user-select:none; }
+.art-reader.has-image-zoom .reader-artboard { position:absolute; inset:0; display:block; width:100%; height:100%; min-height:0; padding:0; margin:0; }
+.art-reader.has-image-zoom .reader-image { position:absolute; left:50%; top:50%; display:block; width:var(--image-fit-width,0px); height:var(--image-fit-height,0px); max-width:none; max-height:none; object-fit:contain; transform:translate(calc(-50% + var(--image-pan-x,0px)),calc(-50% + var(--image-pan-y,0px))) scale(var(--image-scale,1)); transform-origin:center; transition:none; cursor:zoom-in; }
+.art-reader.has-image-zoom[data-zoomed="true"] .reader-image { cursor:grab; }
+.art-reader.has-image-zoom .is-panning .reader-image { cursor:grabbing; }
+.has-image-zoom .reader-help { font-size:10px; }
+@media (max-width:760px) {
+  .has-image-zoom .reader-header { padding:12px; gap:8px; }
+  .has-image-zoom .reader-heading { font-size:12px; flex:none; }
+  .has-image-zoom .reader-heading small { font-size:7px; }
+  .has-image-zoom .reader-actions { gap:6px; }
+  .reader-zoom-tools { gap:5px; }
+  .reader-scale-step { width:30px; min-height:40px; font-size:20px; }
+  .reader-scale-trigger { min-width:65px; min-height:40px; font-size:11px; gap:4px; }
+  .reader-zoom-tools .reader-scale-fit { padding-inline:8px; min-width:42px; min-height:40px; font-size:11px; }
+  .has-image-zoom .reader-close { width:36px; min-height:40px; padding:0; }
+  .has-image-zoom .reader-help { font-size:9px; }
+}

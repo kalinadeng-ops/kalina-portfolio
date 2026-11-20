@@ -157,7 +157,10 @@
     if (horizontal && Math.abs(dx) >= 36) select(active + (dx < 0 ? 1 : -1));
   });
   stage.addEventListener('pointercancel', finishGesture);
-  stage.addEventListener('lostpointercapture', () => { if (gesture) finishGesture(); });
+  stage.addEventListener('lostpointercapture', event => {
+    // Ignore a child's release while transferring the swipe to the stage.
+    if (event.target === stage && gesture) finishGesture();
+  });
   stage.addEventListener('click', event => {
     if (performance.now() < suppressClickUntil) { event.preventDefault(); event.stopImmediatePropagation(); }
   }, true);

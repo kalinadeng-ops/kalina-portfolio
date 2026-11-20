@@ -1,17 +1,16 @@
 /* Responsive exhibition for the project detail pages. */
 (() => {
-const orders = {"hanging-coffee":[[[2,"/assets/projects/coffee-graphics-white.jpg",10417,6695],[1,"/assets/projects/coffee-cover.lossless.webp",2000,1321],[3,"/assets/projects/all/coffee-002.webp",2000,1321],[5,"/assets/projects/all/coffee-004.webp",2000,1321],[6,"/assets/projects/all/coffee-005.webp",2000,1321],[7,"/assets/projects/all/coffee-006.webp",3000,1928],[8,"/assets/projects/coffee-detail.lossless.webp",3000,1928],[11,"/assets/projects/all/coffee-010.webp",2000,1321],[10,"/assets/projects/all/coffee-009.webp",3000,1928],[9,"/assets/projects/all/coffee-008.webp",3000,1928],[4,"/assets/projects/coffee-scene.lossless.webp",3000,1928]]],"craft-beer":[[[1,"/assets/projects/juxi/001.lossless.webp",1588,991],[2,"/assets/projects/juxi/002.lossless.webp",3200,3200],[6,"/assets/projects/all/craft-face-008.webp",3000,4000],[5,"/assets/projects/all/craft-face-006.webp",3000,4000],[7,"/assets/projects/all/craft-face-010.webp",3000,4000],[4,"/assets/projects/all/craft-face-004.webp",3000,4000],[3,"/assets/projects/all/craft-face-002.webp",3000,4000],[13,"/assets/projects/all/craft-main-007.webp",3000,4000],[34,"/assets/projects/all/craft-main-030.webp",3000,4000],[24,"/assets/projects/all/craft-main-019.webp",3000,4000],[29,"/assets/projects/all/craft-main-024.webp",3000,4000],[14,"/assets/projects/all/craft-main-008.webp",3000,4000],[15,"/assets/projects/all/craft-main-009.webp",3000,4000],[35,"/assets/projects/all/craft-main-031.webp",3000,4000],[8,"/assets/projects/all/craft-main-001.webp",3000,4000],[16,"/assets/projects/all/craft-main-010.webp",3000,4000],[37,"/assets/projects/all/craft-main-035.webp",3000,4000],[9,"/assets/projects/all/craft-main-003.webp",3000,4000],[20,"/assets/projects/all/craft-main-016.webp",3000,4000],[31,"/assets/projects/all/craft-main-026.webp",3000,4000],[28,"/assets/projects/all/craft-main-023.webp",3000,4000],[17,"/assets/projects/all/craft-new-005.webp",3000,4000],[22,"/assets/projects/craft-blue-box.lossless.webp",3000,4000],[12,"/assets/projects/all/craft-new-002.webp",3000,4000],[32,"/assets/projects/craft-yellow-box.lossless.webp",3000,4000],[10,"/assets/projects/all/craft-new-001.webp",3000,4000],[19,"/assets/projects/all/craft-main-012.webp",3000,4000],[27,"/assets/projects/all/craft-main-022.webp",3000,4000],[38,"/assets/projects/all/craft-main-036.webp",3000,4000],[25,"/assets/projects/craft-boxes.lossless.webp",3000,4000],[26,"/assets/projects/all/craft-main-021.webp",3000,4000],[30,"/assets/projects/all/craft-main-025.webp",3000,4000],[23,"/assets/projects/all/craft-main-018.webp",3000,4000],[33,"/assets/projects/all/craft-main-029.webp",3000,4000],[40,"/assets/projects/all/craft-main-039.webp",3000,4000],[18,"/assets/projects/all/craft-main-011.webp",3200,3200],[39,"/assets/projects/all/craft-main-038.webp",3200,3200],[36,"/assets/projects/all/craft-main-034.webp",3200,3200],[11,"/assets/projects/all/craft-main-005.webp",3200,3200],[21,"/assets/projects/all/craft-main-017.webp",3200,3200]]],"lumirose-atoll":[[[1,"/assets/projects/lumirose-atoll/001.jpg",2000,2642],[7,"/assets/projects/lumirose-atoll/007.jpg",2000,2642],[2,"/assets/projects/lumirose-atoll/002.jpg",2000,2642],[3,"/assets/projects/lumirose-atoll/003.jpg",2000,2642],[4,"/assets/projects/lumirose-atoll/004.jpg",2000,2642],[5,"/assets/projects/lumirose-atoll/005.jpg",2000,2642],[6,"/assets/projects/lumirose-atoll/006.jpg",2000,2642],[8,"/assets/projects/lumirose-atoll/008.jpg",2000,2642],[9,"/assets/projects/lumirose-atoll/009.webp",1400,1781]]],"prismora":[[[1,"/assets/projects/prismora-cover.webp",2000,1321],[16,"/assets/projects/all/prismora-016.webp",2000,1321],[14,"/assets/projects/all/prismora-013.webp",2000,1321],[2,"/assets/projects/prismora-system.webp",2600,1463],[6,"/assets/projects/prismora-range.webp",2600,1463],[4,"/assets/projects/all/prismora-003.webp",4000,2250],[8,"/assets/projects/all/prismora-007.webp",4000,2250],[13,"/assets/projects/prismora-packaging.webp",2000,1321],[10,"/assets/projects/all/prismora-009.webp",2000,1321],[11,"/assets/projects/all/prismora-010.webp",2000,1321],[7,"/assets/projects/all/prismora-006.webp",2000,1321],[5,"/assets/projects/all/prismora-004.webp",2000,1321],[12,"/assets/projects/all/prismora-011.webp",2000,2642],[3,"/assets/projects/all/prismora-002.webp",2000,2642],[9,"/assets/projects/all/prismora-008.webp",2000,2642],[15,"/assets/projects/all/prismora-015.webp",2000,2642],[17,"/assets/projects/all/prismora-017.webp",2000,2642]]],"luminaere":[[[5,"/assets/projects/luminaere/005.jpg",2000,1321],[1,"/assets/projects/luminaere/001.lossless.webp",6667,3750],[2,"/assets/projects/luminaere/002.lossless.webp",1672,941],[7,"/assets/projects/luminaere/007.jpg",2000,1321],[3,"/assets/projects/luminaere/003.jpg",2000,1321],[4,"/assets/projects/luminaere/004.jpg",2000,1321],[6,"/assets/projects/luminaere/006.jpg",2000,1321],[11,"/assets/projects/luminaere/011.jpg",2000,1321],[9,"/assets/projects/luminaere/009.jpg",2000,2642],[8,"/assets/projects/luminaere/008.jpg",2000,2642],[10,"/assets/projects/luminaere/010.jpg",2000,2642],[12,"/assets/projects/luminaere/012.webp",4000,2250],[13,"/assets/projects/luminaere/013.webp",4000,2250]]],"miaoxing-tea":[[[1,"/assets/projects/miaoxing-tea/001.webp",3840,2560],[2,"/assets/projects/miaoxing-tea/002.webp",3840,2560],[4,"/assets/projects/miaoxing-tea/004.webp",3840,2560],[8,"/assets/projects/miaoxing-tea/008.webp",3840,2560],[9,"/assets/projects/miaoxing-tea/009.webp",3840,2560],[10,"/assets/projects/miaoxing-tea/010.webp",3840,2560],[5,"/assets/projects/miaoxing-tea/005.webp",3840,2560],[11,"/assets/projects/miaoxing-tea/011.webp",3840,2560],[12,"/assets/projects/miaoxing-tea/012.webp",3840,2560],[13,"/assets/projects/miaoxing-tea/013.webp",3840,2560],[14,"/assets/projects/miaoxing-tea/014.webp",3840,2560],[15,"/assets/projects/miaoxing-tea/015.webp",3840,2560],[16,"/assets/projects/miaoxing-tea/016.webp",3840,2560],[6,"/assets/projects/miaoxing-tea/006.webp",3840,2560],[18,"/assets/projects/miaoxing-tea/018.webp",3840,2560],[7,"/assets/projects/miaoxing-tea/007.webp",3840,2560],[17,"/assets/projects/miaoxing-tea/017.webp",3840,2560],[3,"/assets/projects/miaoxing-tea/003.webp",3840,2560]]],"probiotic-lozenges":[[[6,"/assets/projects/probiotic-lozenges/006.webp",3840,2304],[1,"/assets/projects/probiotic-lozenges/001.webp",3840,2304],[2,"/assets/projects/probiotic-lozenges/002.webp",3840,2304],[8,"/assets/projects/probiotic-lozenges/008.webp",3840,2536],[11,"/assets/projects/probiotic-lozenges/011.webp",3840,2537],[3,"/assets/projects/probiotic-lozenges/003.webp",3840,2304],[9,"/assets/projects/probiotic-lozenges/009.webp",3840,2536],[5,"/assets/projects/probiotic-lozenges/005.webp",3840,2304],[7,"/assets/projects/probiotic-lozenges/007.webp",3840,2304],[12,"/assets/projects/probiotic-lozenges/012.webp",2304,3840],[4,"/assets/projects/probiotic-lozenges/004.webp",3200,3840],[13,"/assets/projects/probiotic-lozenges/013.webp",2906,3840],[10,"/assets/projects/probiotic-lozenges/010.webp",2906,3840]]],"tianjingsha":[[[1,"/assets/projects/tianjingsha/001.webp",4961,3508],[2,"/assets/projects/tianjingsha/002.webp",4961,3508],[4,"/assets/projects/tianjingsha/004.webp",4961,3508],[3,"/assets/projects/tianjingsha/003.webp",4961,3508],[6,"/assets/projects/tianjingsha/006.webp",4961,3508],[5,"/assets/projects/tianjingsha/005.webp",4961,3508],[8,"/assets/projects/tianjingsha/008.webp",4961,3508],[7,"/assets/projects/tianjingsha/007.webp",4961,3508],[10,"/assets/projects/tianjingsha/010.webp",4961,3508],[9,"/assets/projects/tianjingsha/009.webp",4961,3508],[11,"/assets/projects/tianjingsha/011.webp",4961,3508],[12,"/assets/projects/tianjingsha/012.webp",4961,3508],[13,"/assets/projects/tianjingsha/013.webp",4961,3508],[14,"/assets/projects/tianjingsha/014.webp",4961,3508],[15,"/assets/projects/tianjingsha/015.webp",4961,3508]]],"guanyi-blossoms":[[[1,"/assets/projects/guanyi-blossoms/001.webp",3000,1688],[4,"/assets/projects/guanyi-blossoms/004.webp",3000,1688],[6,"/assets/projects/guanyi-blossoms/006.webp",3000,1688],[5,"/assets/projects/guanyi-blossoms/005.webp",3000,1688],[2,"/assets/projects/guanyi-blossoms/002.webp",3000,1688],[3,"/assets/projects/guanyi-blossoms/003.webp",3000,1688],[7,"/assets/projects/guanyi-blossoms/007.webp",3000,1688],[12,"/assets/projects/guanyi-blossoms/012.webp",3000,1688],[8,"/assets/projects/guanyi-blossoms/008.webp",3000,1688],[13,"/assets/projects/guanyi-blossoms/013.webp",3000,1688],[14,"/assets/projects/guanyi-blossoms/014.webp",3000,1688],[15,"/assets/projects/guanyi-blossoms/015.webp",3000,1688],[16,"/assets/projects/guanyi-blossoms/016.webp",3000,1688],[17,"/assets/projects/guanyi-blossoms/017.webp",3000,1688],[9,"/assets/projects/guanyi-blossoms/009.webp",3000,1688],[10,"/assets/projects/guanyi-blossoms/010.webp",3000,1688],[11,"/assets/projects/guanyi-blossoms/011.webp",3000,1688],[18,"/assets/projects/guanyi-blossoms/018.webp",3000,1688],[19,"/assets/projects/guanyi-blossoms/019.webp",3000,1688],[20,"/assets/projects/guanyi-blossoms/020.webp",3000,1688],[21,"/assets/projects/guanyi-blossoms/021.webp",3000,1688],[22,"/assets/projects/guanyi-blossoms/022.webp",3000,1688],[23,"/assets/projects/guanyi-blossoms/023.webp",3000,1688],[24,"/assets/projects/guanyi-blossoms/024.webp",3000,1688],[25,"/assets/projects/guanyi-blossoms/025.webp",3000,1688],[26,"/assets/projects/guanyi-blossoms/026.webp",3000,1688],[27,"/assets/projects/guanyi-blossoms/027.webp",3000,1688],[28,"/assets/projects/guanyi-blossoms/028.webp",3000,1688],[29,"/assets/projects/guanyi-blossoms/029.webp",3000,1688],[30,"/assets/projects/guanyi-blossoms/030.webp",3000,1688],[31,"/assets/projects/guanyi-blossoms/031.webp",3000,1688],[32,"/assets/projects/guanyi-blossoms/032.webp",3000,1688],[33,"/assets/projects/guanyi-blossoms/033.webp",3000,1688],[34,"/assets/projects/guanyi-blossoms/034.webp",3000,1688],[35,"/assets/projects/guanyi-blossoms/035.webp",3000,1688],[36,"/assets/projects/guanyi-blossoms/036.webp",3000,1688],[37,"/assets/projects/guanyi-blossoms/037.webp",3000,1688]]],"wanjiang-bookmarks":[[[1,"/assets/projects/wanjiang-bookmarks/001.webp",2600,1463],[2,"/assets/projects/wanjiang-bookmarks/003.webp",2600,1463],[3,"/assets/projects/wanjiang-bookmarks/004.webp",2600,1463],[4,"/assets/projects/wanjiang-bookmarks/005.webp",2600,1463],[5,"/assets/projects/wanjiang-bookmarks/006.webp",2600,1463],[6,"/assets/projects/wanjiang-bookmarks/007.webp",2600,1463],[7,"/assets/projects/wanjiang-bookmarks/002.webp",2600,1463]],[[5,"/assets/projects/wanjiang-bookmarks/012.webp",2600,1954],[2,"/assets/projects/wanjiang-bookmarks/009.webp",2600,1954],[4,"/assets/projects/wanjiang-bookmarks/011.webp",2600,1977],[3,"/assets/projects/wanjiang-bookmarks/010.webp",2600,1954],[1,"/assets/projects/wanjiang-bookmarks/008.webp",2600,1954],[6,"/assets/projects/wanjiang-bookmarks/013.jpg",1280,959]]]};
+const orders = {"hanging-coffee":[[[2,"/assets/projects/coffee-graphics-white.jpg",10417,6695],[1,"/assets/projects/coffee-cover.lossless.webp",2000,1321],[3,"/assets/projects/all/coffee-002.webp",2000,1321],[5,"/assets/projects/all/coffee-004.webp",2000,1321],[6,"/assets/projects/all/coffee-005.webp",2000,1321],[7,"/assets/projects/all/coffee-006.webp",3000,1928],[8,"/assets/projects/coffee-detail.lossless.webp",3000,1928],[11,"/assets/projects/all/coffee-010.webp",2000,1321],[10,"/assets/projects/all/coffee-009.webp",3000,1928],[9,"/assets/projects/all/coffee-008.webp",3000,1928],[4,"/assets/projects/coffee-scene.lossless.webp",3000,1928]]],"craft-beer":[[[1,"/assets/projects/juxi/001.lossless.webp",1588,991],[2,"/assets/projects/juxi/002.lossless.webp",3200,3200],[6,"/assets/projects/all/craft-face-008.webp",3000,4000],[5,"/assets/projects/all/craft-face-006.webp",3000,4000],[7,"/assets/projects/all/craft-face-010.webp",3000,4000],[4,"/assets/projects/all/craft-face-004.webp",3000,4000],[3,"/assets/projects/all/craft-face-002.webp",3000,4000],[13,"/assets/projects/all/craft-main-007.webp",3000,4000],[34,"/assets/projects/all/craft-main-030.webp",3000,4000],[24,"/assets/projects/all/craft-main-019.webp",3000,4000],[29,"/assets/projects/all/craft-main-024.webp",3000,4000],[14,"/assets/projects/all/craft-main-008.webp",3000,4000],[15,"/assets/projects/all/craft-main-009.webp",3000,4000],[35,"/assets/projects/all/craft-main-031.webp",3000,4000],[8,"/assets/projects/all/craft-main-001.webp",3000,4000],[16,"/assets/projects/all/craft-main-010.webp",3000,4000],[37,"/assets/projects/all/craft-main-035.webp",3000,4000],[9,"/assets/projects/all/craft-main-003.webp",3000,4000],[20,"/assets/projects/all/craft-main-016.webp",3000,4000],[31,"/assets/projects/all/craft-main-026.webp",3000,4000],[28,"/assets/projects/all/craft-main-023.webp",3000,4000],[17,"/assets/projects/all/craft-new-005.webp",3000,4000],[22,"/assets/projects/craft-blue-box.lossless.webp",3000,4000],[12,"/assets/projects/all/craft-new-002.webp",3000,4000],[32,"/assets/projects/craft-yellow-box.lossless.webp",3000,4000],[10,"/assets/projects/all/craft-new-001.webp",3000,4000],[19,"/assets/projects/all/craft-main-012.webp",3000,4000],[27,"/assets/projects/all/craft-main-022.webp",3000,4000],[38,"/assets/projects/all/craft-main-036.webp",3000,4000],[25,"/assets/projects/craft-boxes.lossless.webp",3000,4000],[26,"/assets/projects/all/craft-main-021.webp",3000,4000],[30,"/assets/projects/all/craft-main-025.webp",3000,4000],[23,"/assets/projects/all/craft-main-018.webp",3000,4000],[33,"/assets/projects/all/craft-main-029.webp",3000,4000],[40,"/assets/projects/all/craft-main-039.webp",3000,4000],[18,"/assets/projects/all/craft-main-011.webp",3200,3200],[39,"/assets/projects/all/craft-main-038.webp",3200,3200],[36,"/assets/projects/all/craft-main-034.webp",3200,3200],[11,"/assets/projects/all/craft-main-005.webp",3200,3200],[21,"/assets/projects/all/craft-main-017.webp",3200,3200]]],"lumirose-atoll":[[[1,"/assets/projects/lumirose-atoll/001.jpg",2000,2642],[7,"/assets/projects/lumirose-atoll/007.jpg",2000,2642],[2,"/assets/projects/lumirose-atoll/002.jpg",2000,2642],[3,"/assets/projects/lumirose-atoll/003.jpg",2000,2642],[4,"/assets/projects/lumirose-atoll/004.jpg",2000,2642],[5,"/assets/projects/lumirose-atoll/005.jpg",2000,2642],[6,"/assets/projects/lumirose-atoll/006.jpg",2000,2642],[8,"/assets/projects/lumirose-atoll/008.jpg",2000,2642],[9,"/assets/projects/lumirose-atoll/009.webp",1400,1781]]],"prismora":[[[1,"/assets/projects/prismora-cover.webp",2000,1321],[16,"/assets/projects/all/prismora-016.webp",2000,1321],[14,"/assets/projects/all/prismora-013.webp",2000,1321],[2,"/assets/projects/prismora-system.webp",2600,1463],[6,"/assets/projects/prismora-range.webp",2600,1463],[4,"/assets/projects/all/prismora-003.webp",4000,2250],[8,"/assets/projects/all/prismora-007.webp",4000,2250],[13,"/assets/projects/prismora-packaging.webp",2000,1321],[10,"/assets/projects/all/prismora-009.webp",2000,1321],[11,"/assets/projects/all/prismora-010.webp",2000,1321],[7,"/assets/projects/all/prismora-006.webp",2000,1321],[5,"/assets/projects/all/prismora-004.webp",2000,1321],[12,"/assets/projects/all/prismora-011.webp",2000,2642],[3,"/assets/projects/all/prismora-002.webp",2000,2642],[9,"/assets/projects/all/prismora-008.webp",2000,2642],[15,"/assets/projects/all/prismora-015.webp",2000,2642],[17,"/assets/projects/all/prismora-017.webp",2000,2642]]],"luminaere":[[[5,"/assets/projects/luminaere/005.jpg",2000,1321],[1,"/assets/projects/luminaere/001.lossless.webp",6667,3750],[2,"/assets/projects/luminaere/002.lossless.webp",1672,941],[7,"/assets/projects/luminaere/007.jpg",2000,1321],[3,"/assets/projects/luminaere/003.jpg",2000,1321],[4,"/assets/projects/luminaere/004.jpg",2000,1321],[6,"/assets/projects/luminaere/006.jpg",2000,1321],[11,"/assets/projects/luminaere/011.jpg",2000,1321],[9,"/assets/projects/luminaere/009.jpg",2000,2642],[8,"/assets/projects/luminaere/008.jpg",2000,2642],[10,"/assets/projects/luminaere/010.jpg",2000,2642],[12,"/assets/projects/luminaere/012.webp",4000,2250],[13,"/assets/projects/luminaere/013.webp",4000,2250]]],"miaoxing-tea":[[[1,"/assets/projects/miaoxing-tea/001.webp",3840,2560],[2,"/assets/projects/miaoxing-tea/002.webp",3840,2560],[4,"/assets/projects/miaoxing-tea/004.webp",3840,2560],[8,"/assets/projects/miaoxing-tea/008.webp",3840,2560],[9,"/assets/projects/miaoxing-tea/009.webp",3840,2560],[10,"/assets/projects/miaoxing-tea/010.webp",3840,2560],[5,"/assets/projects/miaoxing-tea/005.webp",3840,2560],[11,"/assets/projects/miaoxing-tea/011.webp",3840,2560],[12,"/assets/projects/miaoxing-tea/012.webp",3840,2560],[13,"/assets/projects/miaoxing-tea/013.webp",3840,2560],[14,"/assets/projects/miaoxing-tea/014.webp",3840,2560],[15,"/assets/projects/miaoxing-tea/015.webp",3840,2560],[16,"/assets/projects/miaoxing-tea/016.webp",3840,2560],[6,"/assets/projects/miaoxing-tea/006.webp",3840,2560],[18,"/assets/projects/miaoxing-tea/018.webp",3840,2560],[7,"/assets/projects/miaoxing-tea/007.webp",3840,2560],[17,"/assets/projects/miaoxing-tea/017.webp",3840,2560],[3,"/assets/projects/miaoxing-tea/003.webp",3840,2560]]],"probiotic-lozenges":[[[6,"/assets/projects/probiotic-lozenges/006.webp",3840,2304],[1,"/assets/projects/probiotic-lozenges/001.webp",3840,2304],[2,"/assets/projects/probiotic-lozenges/002.webp",3840,2304],[8,"/assets/projects/probiotic-lozenges/008.webp",3840,2536],[11,"/assets/projects/probiotic-lozenges/011.webp",3840,2537],[3,"/assets/projects/probiotic-lozenges/003.webp",3840,2304],[9,"/assets/projects/probiotic-lozenges/009.webp",3840,2536],[5,"/assets/projects/probiotic-lozenges/005.webp",3840,2304],[7,"/assets/projects/probiotic-lozenges/007.webp",3840,2304],[12,"/assets/projects/probiotic-lozenges/012.webp",2304,3840],[4,"/assets/projects/probiotic-lozenges/004.webp",3200,3840],[13,"/assets/projects/probiotic-lozenges/013.webp",2906,3840],[10,"/assets/projects/probiotic-lozenges/010.webp",2906,3840]]],"tianjingsha":[[[1,"/assets/projects/tianjingsha/001.webp",4961,3508],[2,"/assets/projects/tianjingsha/002.webp",4961,3508],[4,"/assets/projects/tianjingsha/004.webp",4961,3508],[3,"/assets/projects/tianjingsha/003.webp",4961,3508],[6,"/assets/projects/tianjingsha/006.webp",4961,3508],[5,"/assets/projects/tianjingsha/005.webp",4961,3508],[8,"/assets/projects/tianjingsha/008.webp",4961,3508],[7,"/assets/projects/tianjingsha/007.webp",4961,3508],[10,"/assets/projects/tianjingsha/010.webp",4961,3508],[9,"/assets/projects/tianjingsha/009.webp",4961,3508],[11,"/assets/projects/tianjingsha/011.webp",4961,3508],[12,"/assets/projects/tianjingsha/012.webp",4961,3508],[13,"/assets/projects/tianjingsha/013.webp",4961,3508],[14,"/assets/projects/tianjingsha/014.webp",4961,3508],[15,"/assets/projects/tianjingsha/015.webp",4961,3508]]],"guanyi-blossoms":[[[1,"/assets/projects/guanyi-blossoms/001.webp",3000,1688],[4,"/assets/projects/guanyi-blossoms/004.webp",3000,1688],[6,"/assets/projects/guanyi-blossoms/006.webp",3000,1688],[5,"/assets/projects/guanyi-blossoms/005.webp",3000,1688],[2,"/assets/projects/guanyi-blossoms/002.webp",3000,1688],[3,"/assets/projects/guanyi-blossoms/003.webp",3000,1688],[7,"/assets/projects/guanyi-blossoms/007.webp",3000,1688],[12,"/assets/projects/guanyi-blossoms/012.webp",3000,1688],[8,"/assets/projects/guanyi-blossoms/008.webp",3000,1688],[13,"/assets/projects/guanyi-blossoms/013.webp",3000,1688],[14,"/assets/projects/guanyi-blossoms/014.webp",3000,1688],[15,"/assets/projects/guanyi-blossoms/015.webp",3000,1688],[16,"/assets/projects/guanyi-blossoms/016.webp",3000,1688],[17,"/assets/projects/guanyi-blossoms/017.webp",3000,1688],[9,"/assets/projects/guanyi-blossoms/009.webp",3000,1688],[10,"/assets/projects/guanyi-blossoms/010.webp",3000,1688],[11,"/assets/projects/guanyi-blossoms/011.webp",3000,1688],[18,"/assets/projects/guanyi-blossoms/018.webp",3000,1688],[19,"/assets/projects/guanyi-blossoms/019.webp",3000,1688],[20,"/assets/projects/guanyi-blossoms/020.webp",3000,1688],[21,"/assets/projects/guanyi-blossoms/021.webp",3000,1688],[22,"/assets/projects/guanyi-blossoms/022.webp",3000,1688],[23,"/assets/projects/guanyi-blossoms/023.webp",3000,1688],[24,"/assets/projects/guanyi-blossoms/024.webp",3000,1688],[25,"/assets/projects/guanyi-blossoms/025.webp",3000,1688],[26,"/assets/projects/guanyi-blossoms/026.webp",3000,1688],[27,"/assets/projects/guanyi-blossoms/027.webp",3000,1688],[28,"/assets/projects/guanyi-blossoms/028.webp",3000,1688],[29,"/assets/projects/guanyi-blossoms/029.webp",3000,1688],[30,"/assets/projects/guanyi-blossoms/030.webp",3000,1688],[31,"/assets/projects/guanyi-blossoms/031.webp",3000,1688],[32,"/assets/projects/guanyi-blossoms/032.webp",3000,1688],[33,"/assets/projects/guanyi-blossoms/033.webp",3000,1688],[34,"/assets/projects/guanyi-blossoms/034.webp",3000,1688],[35,"/assets/projects/guanyi-blossoms/035.webp",3000,1688],[36,"/assets/projects/guanyi-blossoms/036.webp",3000,1688],[37,"/assets/projects/guanyi-blossoms/037.webp",3000,1688]]],"wanjiang-bookmarks":[[[1,"/assets/projects/wanjiang-bookmarks/001.webp",2600,1463],[2,"/assets/projects/wanjiang-bookmarks/003.webp",2600,1463],[3,"/assets/projects/wanjiang-bookmarks/004.webp",2600,1463],[4,"/assets/projects/wanjiang-bookmarks/005.webp",2600,1463],[5,"/assets/projects/wanjiang-bookmarks/006.webp",2600,1463],[6,"/assets/projects/wanjiang-bookmarks/007.webp",2600,1463],[7,"/assets/projects/wanjiang-bookmarks/002.webp",2600,1463]],[[5,"/assets/projects/wanjiang-bookmarks/012.webp",2600,1954],[2,"/assets/projects/wanjiang-bookmarks/009.webp",2600,1954],[4,"/assets/projects/wanjiang-bookmarks/011.webp",2600,1977],[3,"/assets/projects/wanjiang-bookmarks/010.webp",2600,1954],[1,"/assets/projects/wanjiang-bookmarks/008.webp",2600,1954],[6,"/assets/projects/wanjiang-bookmarks/013.jpg",1280,959]]],"songshanhu-qingma":[[[1,"/assets/projects/songshanhu-qingma/001.webp",3200,1800],[2,"/assets/projects/songshanhu-qingma/003.webp",3200,1800],[3,"/assets/projects/songshanhu-qingma/002.webp",3200,1800],[4,"/assets/projects/songshanhu-qingma/004.webp",3200,1800],[5,"/assets/projects/songshanhu-qingma/005.webp",3200,1800],[6,"/assets/projects/songshanhu-qingma/006.webp",3200,1800]]]};
 function createReader(sources, title, id) {
   const pad = index => String(index + 1).padStart(2, '0');
   const reader=document.createElement('dialog');
   reader.className='art-reader';reader.setAttribute('aria-labelledby',`reader-title-${id}`);reader.dataset.zoomed='false';
-  reader.innerHTML='<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="reader-arrow-tone" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c3def6"/><stop offset=".5" stop-color="#8fb3dc"/><stop offset="1" stop-color="#6889b4"/></linearGradient></defs></svg><header class="reader-header"><h2 class="reader-heading" id="reader-title-'+id+'">作品细看<small>DESIGN VIEW</small></h2><p class="reader-project"></p><div class="reader-actions"><button type="button" class="reader-button reader-zoom" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4M7.5 10.5h6m-3-3v6"/></svg><span>放大细节</span></button><button type="button" class="reader-button reader-close" aria-label="关闭细看，返回总览" autofocus><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div></header><div class="reader-stage"><button type="button" class="reader-arrow reader-prev" aria-label="上一张作品"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 4.1 21 12 4.5 19.9 10.2 12Z"/></svg></button><div class="reader-image-viewport" tabindex="0" role="region" aria-label="作品图像，可放大查看"><figure class="reader-artboard"><img class="reader-image" decoding="async" draggable="false"></figure></div><button type="button" class="reader-arrow reader-next" aria-label="下一张作品"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 4.1 21 12 4.5 19.9 10.2 12Z"/></svg></button><div class="reader-notice-slot" role="status" aria-live="polite"><div class="gallery-end-notice" hidden><span class="gallery-end-spark" aria-hidden="true">✦</span><span>已经是最后一张啦~</span></div></div></div><footer class="reader-footer"><div class="reader-footer-top"><span class="reader-pagination" aria-live="polite" aria-atomic="true"><span class="reader-page-star" aria-hidden="true">✦</span><span class="reader-page-current">01</span><span aria-hidden="true">/</span><span>'+pad(sources.length-1)+'</span><span class="reader-progress" aria-hidden="true"></span></span><p class="reader-help">左右切换作品 · 点击画面放大细节</p></div><div class="reader-thumbnails" role="group" aria-label="细看作品导航"></div></footer>';
+  reader.innerHTML='<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="reader-arrow-tone" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c3def6"/><stop offset=".5" stop-color="#8fb3dc"/><stop offset="1" stop-color="#6889b4"/></linearGradient></defs></svg><header class="reader-header"><h2 class="reader-heading" id="reader-title-'+id+'">作品细看<small>DESIGN VIEW</small></h2><p class="reader-project"></p><div class="reader-actions"><button type="button" class="reader-button reader-zoom" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4M7.5 10.5h6m-3-3v6"/></svg><span>放大细节</span></button><button type="button" class="reader-button reader-close" aria-label="关闭细看，返回总览" autofocus><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div></header><div class="reader-stage"><button type="button" class="reader-arrow reader-prev" aria-label="上一张作品"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 4.1 21 12 4.5 19.9 10.2 12Z"/></svg></button><div class="reader-image-viewport" tabindex="0" role="region" aria-label="作品图像，可放大查看"><figure class="reader-artboard"><img class="reader-image" decoding="async" draggable="false"></figure></div><button type="button" class="reader-arrow reader-next" aria-label="下一张作品"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 4.1 21 12 4.5 19.9 10.2 12Z"/></svg></button><div class="reader-notice-slot" role="status" aria-live="polite"><div class="gallery-end-notice" hidden><span class="gallery-end-spark" aria-hidden="true">✦</span><span>已经是最后一张啦~</span></div></div></div><footer class="reader-footer"><div class="reader-footer-top"><span class="reader-pagination" aria-live="polite" aria-atomic="true"><span class="reader-page-star" aria-hidden="true">✦</span><span class="reader-page-current">01</span><span aria-hidden="true">/</span><span>'+pad(sources.length-1)+'</span><span class="reader-progress" aria-hidden="true"></span></span><p class="reader-help">选择比例放大 · 拖动画面查看细节</p></div><div class="reader-thumbnails" role="group" aria-label="细看作品导航"></div></footer>';
   if (id > 1) reader.querySelector('svg').remove();
   reader.querySelector('.reader-project').textContent = title;
   document.body.append(reader);
   const image=reader.querySelector('.reader-image');
   const imageViewport=reader.querySelector('.reader-image-viewport');
-  const zoom=reader.querySelector('.reader-zoom');
   const close=reader.querySelector('.reader-close');
   const previous=reader.querySelector('.reader-prev');
   const next=reader.querySelector('.reader-next');
@@ -20,6 +19,7 @@ function createReader(sources, title, id) {
   const notice=reader.querySelector('.gallery-end-notice');
   const thumbs=reader.querySelector('.reader-thumbnails');
   let active=0,noticeTimer,opener,bodyOverflow='',bodyPadding='',rootOverflow='';
+  const zoomController = window.KalinaImageZoom.attach(reader, { onStep: delta => show(active + delta) });
   const thumbButtons=[];
   sources.forEach((source,index)=>{
     const button=document.createElement('button');button.type='button';button.className='reader-thumb';button.setAttribute('aria-label',`切换到第 ${index+1} 张作品`);button.setAttribute('aria-pressed','false');
@@ -27,7 +27,7 @@ function createReader(sources, title, id) {
     button.append(img);thumbs.append(button);thumbButtons.push(button);button.addEventListener('click',()=>show(index));
   });
   function resetZoom(){
-    reader.dataset.zoomed='false';zoom.setAttribute('aria-pressed','false');zoom.querySelector('span').textContent='放大细节';imageViewport.scrollTop=0;imageViewport.scrollLeft=0;
+    zoomController.reset();
   }
   function show(index){
     if(index>=sources.length){if(notice.hidden){notice.hidden=false;noticeTimer=setTimeout(()=>{notice.hidden=true;},1500);}return;}
@@ -50,28 +50,15 @@ function createReader(sources, title, id) {
     show(index);reader.showModal();
     requestAnimationFrame(()=>show(index));
   }
-  function toggleZoom(){
-    if(reader.dataset.zoomed==='true'){resetZoom();return;}
-    const width=Math.min(sources[active].width,Math.max(imageViewport.clientWidth,image.getBoundingClientRect().width*1.8));
-    reader.style.setProperty('--reader-zoom-width',`${width}px`);reader.dataset.zoomed='true';zoom.setAttribute('aria-pressed','true');zoom.querySelector('span').textContent='适应屏幕';imageViewport.focus({preventScroll:true});
-  }
   close.addEventListener('click',()=>reader.close());
   reader.addEventListener('close',()=>{
     clearTimeout(noticeTimer);notice.hidden=true;resetZoom();document.body.style.overflow=bodyOverflow;document.body.style.paddingRight=bodyPadding;document.documentElement.style.overflow=rootOverflow;opener?.focus({preventScroll:true});
   });
-  zoom.addEventListener('click',toggleZoom);image.addEventListener('click',toggleZoom);
   previous.addEventListener('click',()=>show(active-1));next.addEventListener('click',()=>show(active+1));
   reader.addEventListener('keydown',event=>{
     if(reader.dataset.zoomed==='true')return;
     if(event.key==='ArrowLeft'||event.key==='ArrowRight'){event.preventDefault();show(active+(event.key==='ArrowRight'?1:-1));}
   });
-  let touch;
-  imageViewport.addEventListener('touchstart',event=>{touch=event.touches.length===1?{x:event.touches[0].clientX,y:event.touches[0].clientY}:null;},{passive:true});
-  imageViewport.addEventListener('touchend',event=>{
-    if(!touch||reader.dataset.zoomed==='true')return;
-    const dx=event.changedTouches[0].clientX-touch.x,dy=event.changedTouches[0].clientY-touch.y;touch=null;
-    if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)){event.preventDefault();show(active+(dx<0?1:-1));}
-  },{passive:false});
 
   return {reader, openReader};
 }
@@ -123,6 +110,7 @@ function createDepth(section, images, reader, openReader, id) {
   const moveCardFocus=cards.some(card=>card===document.activeElement);
   clearTimeout(depthLayerTimer);
   depthActive=Math.max(0,index);
+  if (images[depthActive].dataset.label) depthPanel.querySelector('.depth-hint').textContent = images[depthActive].dataset.label + ' · 点击照片细看';
   depthStage.style.setProperty('--depth-current-ratio',String(imageRatio(images[depthActive])));
   cards.forEach((card,i)=>{
    const offset=i-depthActive;
@@ -158,8 +146,28 @@ function createDepth(section, images, reader, openReader, id) {
  depthSelect(0);
  desktop.addEventListener('change',()=>{if(desktop.matches)depthSelect(depthActive);});
 }
-function createAlbum(gallery, sources, reader, openReader, id) {
-  const compact = matchMedia('(max-width:1023px)');
+function createPhotoSheet(gallery, images, openReader) {
+  const sheet = document.createElement('div');
+  sheet.className = 'site-photo-sheet';
+  const buttons = images.map((image, index) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'site-photo-open';
+    button.setAttribute('aria-haspopup', 'dialog');
+    button.setAttribute('aria-label', '查看现场照片：' + image.dataset.label);
+    const caption = document.createElement('span');
+    caption.className = 'site-photo-legend';
+    caption.textContent = image.dataset.label;
+    button.append(image.cloneNode(true), caption);
+    button.addEventListener('click', () => openReader(index, button));
+    sheet.append(button);
+    return button;
+  });
+  gallery.append(sheet);
+  return buttons;
+}
+
+function createAlbum(gallery, sources, reader, openReader, id, compact, sheetButtons) {
   const reduced = matchMedia('(prefers-reduced-motion:reduce)');
   const pad = index => String(index + 1).padStart(2, '0');
   let active = 0;
@@ -254,6 +262,7 @@ function createAlbum(gallery, sources, reader, openReader, id) {
     notice.hidden = true;
     const focusArt = artButtons.includes(document.activeElement);
     active = Math.max(0, index);
+    if (sources[active].dataset.label) album.querySelector('.album-hint').textContent = sources[active].dataset.label + ' · 左右滑动翻页';
     artButtons.forEach((button, i) => {
       const current = i === active;
       button.classList.toggle('is-current', current);
@@ -287,12 +296,13 @@ function createAlbum(gallery, sources, reader, openReader, id) {
     }
   });
   reader.addEventListener('close', () => {
-    if (!readerOpened) return;
+    if (!readerOpened && !sheetButtons) return;
     readerOpened = false;
     const viewed = reader.querySelector('.reader-image')?.getAttribute('src');
     const index = sources.findIndex(source => source.getAttribute('src') === viewed);
     if (index >= 0) select(index, false);
-    if (compact.matches) artButtons[active].focus({ preventScroll: true });
+    const returnTarget = compact.matches ? artButtons[active] : sheetButtons?.[active];
+    returnTarget?.focus({ preventScroll: true });
   });
 
   const finishGesture = () => {
@@ -321,7 +331,10 @@ function createAlbum(gallery, sources, reader, openReader, id) {
     if (horizontal && Math.abs(dx) >= 36) select(active + (dx < 0 ? 1 : -1));
   });
   stage.addEventListener('pointercancel', finishGesture);
-  stage.addEventListener('lostpointercapture', () => { if (gesture) finishGesture(); });
+  stage.addEventListener('lostpointercapture', event => {
+    // A child image releases its implicit capture when the stage takes over.
+    if (event.target === stage && gesture) finishGesture();
+  });
   stage.addEventListener('click', event => {
     if (performance.now() < suppressClickUntil) { event.preventDefault(); event.stopImmediatePropagation(); }
   }, true);
@@ -335,11 +348,20 @@ const configuration = orders[document.body.dataset.project];
 const original = [...(root?.querySelectorAll('.coffee-carousel') || [])];
 const title = root?.querySelector('.coffee-top h1');
 const information = root?.querySelector('.coffee-information');
-if (!configuration || original.length !== configuration.length || !title || !information) return;
+const ordered = original.filter(carousel => !carousel.hasAttribute('data-source-order'));
+if (!configuration || ordered.length !== configuration.length || !title || !information) return;
 
 // Validate every source before replacing the fallback carousels.
-const galleries = original.map((carousel, index) => {
+const galleries = original.map(carousel => {
   const figures = [...carousel.querySelectorAll('.coffee-slide img')];
+  if (carousel.hasAttribute('data-source-order')) {
+    if (!figures.length || !figures.every(img => img.getAttribute('src') && Number(img.getAttribute('width')) > 0 && Number(img.getAttribute('height')) > 0)) return null;
+    return figures.map(img => ({
+      src: img.src, alt: img.alt, label: img.dataset.label,
+      width: Number(img.getAttribute('width')), height: Number(img.getAttribute('height'))
+    }));
+  }
+  const index = ordered.indexOf(carousel);
   const inputs = configuration[index];
   if (figures.length !== inputs.length || !inputs.every(([i, src]) => figures[i-1]?.src === window.kalinaSiteURL(src))) return null;
   return inputs.map(([i, src, width, height]) => ({src: window.kalinaSiteURL(src), width, height, alt: i===1 && index===0 ? figures[0].alt : `${title.textContent} · ${carousel.closest('section').querySelector('h2').textContent} ${i}`}));
@@ -353,7 +375,9 @@ const compact=matchMedia('(max-width:1023px)');
 function applyPresentation() {
   document.body.dataset.mobileExhibit=compact.matches?'album':'';
   root.querySelectorAll('.curated-count').forEach(count => {
-    count.querySelector('span').textContent=compact.matches?'／ 掌上展册':'／ 策展总览';
+    const fieldLayout = count.closest('[data-field-layout]')?.dataset.fieldLayout;
+    const isAlbum = fieldLayout ? fieldLayout === 'album' : compact.matches;
+    count.querySelector('span').textContent = isAlbum ? '／ 掌上展册' : fieldLayout ? '／ 现场总览' : '／ 策展总览';
   });
 }
 const headingRow = document.createElement('div');
@@ -391,17 +415,31 @@ original.forEach((carousel, index) => {
     section.querySelectorAll('.curated-light path').forEach(path=>{path.style.stroke=`url(#curated-thread-${id})`;});
     section.querySelector('.curated-guide img').alt='';
   }
-  const images=sources.map(({src,alt,width,height}) => {
+  if (carousel.dataset.countUnit) section.querySelector('.curated-count').firstChild.data = count + ' ' + carousel.dataset.countUnit + ' ';
+  const images=sources.map(({src,alt,width,height,label}) => {
     const image=document.createElement('img');
     Object.assign(image,{src,alt,width,height,loading:'lazy',decoding:'async',draggable:false});
+    if (label) image.dataset.label = label;
     return image;
   });
   const {reader,openReader}=createReader(sources,title.textContent,id);
   const meta=carousel.nextElementSibling;
   carousel.replaceWith(section);
   if(meta?.classList.contains('coffee-carousel-meta'))meta.remove();
-  createDepth(section,images,reader,openReader,id);
-  createAlbum(section,images,reader,openReader,id);
+  if (gallerySection.hasAttribute('data-photo-sheet')) {
+    const albumView = matchMedia('(max-width: 739px), (orientation: portrait) and (any-pointer: coarse), (max-width: 1023px) and (max-height: 540px) and (any-pointer: coarse)');
+    function updateFieldLayout() {
+      gallerySection.dataset.fieldLayout = albumView.matches ? 'album' : 'sheet';
+      applyPresentation();
+    }
+    updateFieldLayout();
+    albumView.addEventListener('change', updateFieldLayout);
+    const sheetButtons = createPhotoSheet(section, images, openReader);
+    createAlbum(section, images, reader, openReader, id, albumView, sheetButtons);
+  } else {
+    createDepth(section,images,reader,openReader,id);
+    createAlbum(section,images,reader,openReader,id,compact);
+  }
 });
 compact.addEventListener('change',applyPresentation);
 applyPresentation();

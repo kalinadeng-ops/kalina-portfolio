@@ -1,0 +1,39 @@
+/* Discourage native image saving without blocking viewing or page scrolling. */
+img,
+picture,
+canvas,
+svg image,
+[data-image-protected] {
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.image-download-notice {
+  position: fixed;
+  z-index: 2147483647;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: max-content;
+  max-width: calc(100vw - 40px);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 14px 22px;
+  border: 1px solid rgba(255, 255, 255, .95);
+  border-radius: 16px;
+  background: rgba(245, 248, 255, .94);
+  box-shadow: 0 8px 30px rgba(67, 91, 131, .18), inset 0 1px 0 #fff;
+  color: #405a7b;
+  font: 500 14px/1.6 system-ui, "PingFang SC", "Microsoft YaHei", sans-serif;
+  text-align: center;
+  pointer-events: none;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.image-download-notice[hidden] { display: none !important; }
+
+@media (max-width: 480px) {
+  .image-download-notice { padding: 12px 18px; font-size: 13px; }
+}

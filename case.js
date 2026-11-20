@@ -28,7 +28,10 @@ const cases = {
     number: '03', name: '活动物料设计', en: 'Event Materials', next: 'illustration', nextName: '插画设计',
     intro: '让每个现场，都有高光。',
     evidence: ['活动背景与传播目标', '主视觉与各物料原稿', '现场照片与本人职责'],
-    application: '海报、邀请物、指引、空间与数字传播物料'
+    application: '海报、邀请物、指引、空间与数字传播物料',
+    projects: [
+      { slug: 'songshanhu-qingma', name: '松山湖青马班', en: 'Event Visual Design', type: '活动视觉与物料设计', cover: '/assets/projects/songshanhu-qingma/001.webp', alt: '松山湖青马班活动视觉设计方案' }
+    ]
   },
   illustration: {
     number: '04', name: '插画设计', en: 'Illustration', next: 'posters', nextName: '海报设计',

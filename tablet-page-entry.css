@@ -1,0 +1,31 @@
+/* One entry rhythm for project details, exhibition halls and the creator file. */
+@media (min-width: 740px) and (max-width: 1400px) and (min-height: 560px) and (any-pointer: coarse) {
+  body.project-page,
+  body.category-exhibit,
+  body.resume-page {
+    --page-entry-top: 8px;
+    --page-entry-heading-gap: 16px;
+  }
+
+  .category-exhibit .hall-topline,
+  .resume-page .resume-topline {
+    padding-top: var(--page-entry-top);
+    line-height: 18px;
+  }
+
+  body.project-page.story-first .coffee-top {
+    padding-top: var(--page-entry-top);
+  }
+  body.project-page .project-topline {
+    line-height: 18px;
+  }
+  body.project-page.story-first .story-title-row--info-button {
+    margin-top: var(--page-entry-heading-gap);
+  }
+
+  .category-exhibit .hall-intro,
+  .resume-page .resume-hero {
+    align-items: start;
+    padding-top: var(--page-entry-heading-gap);
+  }
+}
