@@ -26,12 +26,12 @@
     transform: translate(-50%, -50%) rotate(20deg);
   }
   .gallery-home .hero-split .inspiration-stage .category-posters { top: 3%; }
-  .gallery-home .hero-split .inspiration-stage .category-packaging { top: 8%; }
-  .gallery-home .hero-split .inspiration-stage .category-branding { top: 10%; }
+  .gallery-home .hero-split .inspiration-stage .category-packaging { top: 12.5%; }
+  .gallery-home .hero-split .inspiration-stage .category-branding { top: 14.5%; }
 }
 @media (min-width: 740px) and (max-width: 1400px) and (any-pointer: coarse) and (orientation: portrait) {
   .gallery-home .hero-split .inspiration-stage {
-    height: min(calc(100svh - var(--gallery-header-height)), clamp(780px, 100vw, 940px));
+    height: min(calc(100svh - var(--gallery-header-height)), clamp(732px, 94vw, 884px));
   }
   .gallery-home .hero-split .inspiration-stage .hero-ip.hero-motion {
     --gallery-ip-size: clamp(380px, 52vw, 500px);
@@ -41,10 +41,10 @@
     animation-name: exhibit-drift-mobile;
   }
   .gallery-home .hero-split .inspiration-stage .category-packaging {
-    top: 17%; left: 8%; width: 25%; height: clamp(178px, 23vw, 210px);
+    top: 24.5%; left: 8%; width: 25%; height: clamp(178px, 23vw, 210px);
   }
   .gallery-home .hero-split .inspiration-stage .category-branding {
-    top: 19%; right: 8%; width: 25%; height: clamp(178px, 23vw, 210px);
+    top: 26.5%; right: 8%; width: 25%; height: clamp(178px, 23vw, 210px);
   }
   .gallery-home .hero-split .inspiration-stage .category-posters {
     top: 7%; left: 38.5%; width: 23%; height: 116px;
@@ -58,4 +58,5 @@
   .gallery-home .inspiration-stage .gallery-orbit { width: 79%; height: 59%; }
   .gallery-home .inspiration-stage .gallery-orbit.orbit-two { width: 60%; height: 68%; }
   .gallery-home .exhibition-caption { top: auto; bottom: 14px; }
+  .gallery-home .exhibition-rooms .work-room { padding-top: 15px; }
 }

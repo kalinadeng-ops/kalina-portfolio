@@ -13,13 +13,14 @@
   <link rel="stylesheet" href="./portfolio-world.css?v=20261030-2">
   <link rel="stylesheet" href="./hero-split.css?v=20261030-2">
   <link rel="stylesheet" href="./category-cards.css?v=20261030">
-  <link rel="stylesheet" href="./inspiration-stage.css?v=20261118-2">
+  <link rel="stylesheet" href="./inspiration-stage.css?v=20261124-1">
   <link rel="stylesheet" href="./gallery-chrome.css?v=20261031-2">
   <link rel="stylesheet" href="./full-bleed-sections.css?v=20261031-1">
   <link rel="stylesheet" href="./project-collection.css?v=20261031-1">
   <script src="./app.js?v=20261102-1" defer></script>
   <script src="./ip-motion.js?v=20261030-5" defer></script>
   <link rel="stylesheet" href="./home-card-arrows.css?v=20261101-1">
+  <link rel="stylesheet" href="./home-exhibit-cards.css?v=20261124-2">
   <link rel="stylesheet" href="./exhibition-rooms.css?v=20261104-2">
   <script src="./exhibition-rooms.js?v=20261102-2" defer></script>
   <link rel="stylesheet" href="./gallery-light-trails.css?v=20261104-2">
@@ -27,6 +28,47 @@
   <link rel="stylesheet" href="./work-menu.css?v=20261102-1">
 <link rel="stylesheet" href="./image-protection.css?v=1">
 <script src="./image-protection.js?v=2" defer></script>
+<style>
+  .runway-reflection { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
+  .stage-strand { opacity:.50; }
+  .stage-strand .strand-ink { stroke-width:1.35px; }
+  .stage-strand .strand-aura { stroke-width:4.6px; opacity:.10; filter:blur(1.7px); }
+  .strand-rose .strand-ink { stroke-width:1.25px; opacity:.94; }
+  .stage-strand .strand-glint { opacity:.55; }
+  .strand-glint .glint-bloom { stroke:#d6eeff; stroke-width:4px; filter:blur(1.5px); }
+  .strand-rose .glint-bloom { stroke:#ffe0ee; }
+  .strand-glint .glint-core { stroke:#fffdfd; stroke-width:1.25px; }
+  @media (prefers-reduced-motion:reduce) { .stage-strand .strand-glint { display:none; } }
+</style>
+<style id="v3-lower-lights">
+.exhibition-rooms .v3-wall { opacity:1; }
+.exhibition-rooms :is(.v3-wall,.v3-bridge) path { fill:none; vector-effect:non-scaling-stroke; stroke-linecap:round; stroke-linejoin:round; }
+.exhibition-rooms :is(.v3-wall,.v3-bridge) .v3-bed { stroke:var(--v3-base); stroke-width:1.05px; opacity:.82; }
+.exhibition-rooms :is(.v3-wall,.v3-bridge) .v3-core { stroke:#fffefd; stroke-width:1.16px; }
+.exhibition-rooms :is(.v3-wall,.v3-bridge) .v3-aura { stroke:#f7fbff; stroke-width:4px; opacity:.58; filter:blur(2px); }
+.exhibition-rooms .v3-companion { opacity:.70; }
+.exhibition-rooms .v3-wall .bead-aura { stroke:#fffafc; stroke-width:6.5px; opacity:.45; filter:blur(1.65px); }
+.exhibition-rooms .v3-wall .bead-glass { stroke:#fff5fa; stroke-width:3.15px; opacity:.89; }
+.exhibition-rooms .v3-wall .bead-pin { stroke:#fff; stroke-width:1.9px; }
+.v3-moving-window { animation:v3-light-transit 5.7s linear -1.9s infinite; animation-play-state:paused; }
+.v3-moving-window.reverse-window { animation-duration:6.9s; animation-direction:reverse; animation-delay:-4.1s; }
+.v3-lights-visible .v3-moving-window { animation-play-state:running; }
+@keyframes v3-light-transit { from { transform:translateX(0px) } to { transform:translateX(2220px) } }
+.exhibition-rooms .contact-light.v3-bridge { inset:-14px 0 auto; width:100%; height:160px; z-index:-1; opacity:1; }
+.exhibition-rooms .v3-bridge .v3-bed { opacity:.82; stroke-width:.95px; }
+.v3-bridge .v3-moving-window { animation-duration:6.3s; animation-delay:-.7s; }
+.v3-narrow { display:none; }
+@media (max-width:760px) {
+  .v3-narrow { display:inline; } .v3-wide { display:none; }
+  .exhibition-rooms .contact-light.v3-bridge { inset:-14px 0 auto; height:160px; }
+  .exhibition-rooms .v3-wall .v3-bed { stroke-width:.92px; }
+  .exhibition-rooms .v3-wall .bead-glass { stroke-width:2.55px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .v3-moving-window { animation:none!important; }
+  .v3-travelling { display:none; }
+}
+</style>
 </head>
 <body class="gallery-home">
   <a class="skip-link" href="#main">跳至主要内容</a>
@@ -40,7 +82,28 @@
     <section class="hero hero-split" aria-labelledby="hero-title">
       <h1 class="hero-accessible-title" id="hero-title">KALINA 视觉设计作品集</h1>
       <div class="hero-exhibition inspiration-stage" aria-label="灵感展场，五类作品围绕KALINA画家IP">
-        <div class="exhibition-scenery" aria-hidden="true"><svg class="hero-light-trails" viewBox="0 0 1440 800" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="hero-light-trail-tone" x1="0" y1="0" x2="1" y2=".4"><stop stop-color="#a4d9ff"/><stop offset=".48" stop-color="#c0b9ed"/><stop offset="1" stop-color="#f2b3d6"/></linearGradient></defs><g class="hero-light-track-one"><path class="hero-light-line hero-light-halo" d="M-160 535 C110 320 300 640 560 530 S1050 240 1600 430"/><path class="hero-light-line hero-light-color" d="M-160 535 C110 320 300 640 560 530 S1050 240 1600 430"/><path class="hero-light-line hero-light-core" d="M-160 535 C110 320 300 640 560 530 S1050 240 1600 430"/></g><g class="hero-light-track-two"><path class="hero-light-line hero-light-halo" d="M1600 165 C1300 70 1110 405 865 290 S290 150 -160 370"/><path class="hero-light-line hero-light-color" d="M1600 165 C1300 70 1110 405 865 290 S290 150 -160 370"/><path class="hero-light-line hero-light-core" d="M1600 165 C1300 70 1110 405 865 290 S290 150 -160 370"/></g><g class="hero-light-track-three"><path class="hero-light-line hero-light-halo" d="M-160 710 C130 820 440 595 700 645 S1190 850 1600 600"/><path class="hero-light-line hero-light-color" d="M-160 710 C130 820 440 595 700 645 S1190 850 1600 600"/><path class="hero-light-line hero-light-core" d="M-160 710 C130 820 440 595 700 645 S1190 850 1600 600"/></g></svg><i class="gallery-orbit orbit-one"></i><i class="gallery-orbit orbit-two"></i><i class="gallery-bubble bubble-one"></i><i class="gallery-bubble bubble-two"></i><i class="gallery-bubble bubble-three"></i><i class="gallery-spark spark-one"></i><i class="gallery-spark spark-two"></i><i class="gallery-spark spark-three"></i></div>
+        <div class="exhibition-scenery" aria-hidden="true"><svg class="runway-reflection" viewBox="0 0 1000 600" preserveAspectRatio="none" aria-hidden="true" focusable="false" fill="none" stroke-linecap="round">
+  <defs>
+    <path id="stage-arc-blue" pathLength="1000" vector-effect="non-scaling-stroke"/>
+    <path id="stage-arc-rose" pathLength="1000" vector-effect="non-scaling-stroke"/>
+    <linearGradient id="stage-arc-blue-ink"><stop stop-color="#b4d2e9"/><stop offset=".42" stop-color="#bad5ec"/><stop offset="1" stop-color="#cec5e2"/></linearGradient>
+    <linearGradient id="stage-arc-rose-ink"><stop stop-color="#d1c2df"/><stop offset=".5" stop-color="#ddc5dc"/><stop offset="1" stop-color="#e7c6d5"/></linearGradient>
+  </defs>
+  <g class="stage-strand strand-rose" stroke="url(#stage-arc-rose-ink)">
+    <use href="#stage-arc-rose" class="strand-aura"/><use href="#stage-arc-rose" class="strand-ink"/>
+    <g class="strand-glint" stroke-dasharray="48 1200">
+      <animate attributeName="stroke-dashoffset" values="55;-1030" dur="7.4s" begin="-1.6s" repeatCount="indefinite"/>
+      <use href="#stage-arc-rose" class="glint-bloom"/><use href="#stage-arc-rose" class="glint-core"/>
+    </g>
+  </g>
+  <g class="stage-strand strand-blue" stroke="url(#stage-arc-blue-ink)">
+    <use href="#stage-arc-blue" class="strand-aura"/><use href="#stage-arc-blue" class="strand-ink"/>
+    <g class="strand-glint" stroke-dasharray="48 1200">
+      <animate attributeName="stroke-dashoffset" values="55;-1030" dur="6.2s" begin="-4.1s" repeatCount="indefinite"/>
+      <use href="#stage-arc-blue" class="glint-bloom"/><use href="#stage-arc-blue" class="glint-core"/>
+    </g>
+  </g>
+</svg><i class="gallery-orbit orbit-one"></i><i class="gallery-orbit orbit-two"></i><i class="gallery-bubble bubble-one"></i><i class="gallery-bubble bubble-two"></i><i class="gallery-bubble bubble-three"></i><i class="gallery-spark spark-one"></i><i class="gallery-spark spark-two"></i><i class="gallery-spark spark-three"></i></div>
         <nav class="hero-collage category-cards" aria-label="五个作品展区">
           <a class="collage-sheet category-card category-packaging" href="./work/packaging/" aria-label="进入包装设计展区"><span class="category-meta">EXHIBIT 01 / PACKAGING</span><span class="category-object object-box" aria-hidden="true"><i></i><b></b><em></em></span><div class="category-copy"><strong>包装设计</strong><p>把奇思，装进日常。</p></div><span class="category-arrow" aria-hidden="true"><svg viewBox="0 0 32 34" focusable="false"><defs><linearGradient id="exhibit-arrow-packaging" x1="0" y1="0" x2=".7" y2="1"><stop offset="0" stop-color="#b2d8fc"/><stop offset=".48" stop-color="#7da5d4"/><stop offset="1" stop-color="#5475aa"/></linearGradient></defs><path class="category-arrow-depth" d="M10.3 6.5H24.1C25 6.5 25.6 7.2 25.6 8.1V21.9C25.6 23.3 23.9 24 22.9 23L18.9 19L10.2 27.7C9.5 28.4 8.4 28.4 7.7 27.7L4.3 24.3C3.6 23.6 3.6 22.5 4.3 21.8L13 13.1L9 9.1C8 8.1 8.9 6.5 10.3 6.5Z"/><path fill="url(#exhibit-arrow-packaging)" d="M10.3 6.5H24.1C25 6.5 25.6 7.2 25.6 8.1V21.9C25.6 23.3 23.9 24 22.9 23L18.9 19L10.2 27.7C9.5 28.4 8.4 28.4 7.7 27.7L4.3 24.3C3.6 23.6 3.6 22.5 4.3 21.8L13 13.1L9 9.1C8 8.1 8.9 6.5 10.3 6.5Z"/><path class="category-arrow-highlight" d="M11.2 8.2H23.4V13.2"/></svg></span></a>
           <a class="collage-sheet category-card category-branding" href="./work/branding/" aria-label="进入品牌设计展区"><span class="category-meta">EXHIBIT 02 / IDENTITY</span><span class="category-object object-brand" aria-hidden="true"><i></i><b></b><em></em></span><div class="category-copy"><strong>品牌设计</strong><p>让灵感，长成品牌。</p></div><span class="category-arrow" aria-hidden="true"><svg viewBox="0 0 32 34" focusable="false"><defs><linearGradient id="exhibit-arrow-branding" x1="0" y1="0" x2=".7" y2="1"><stop offset="0" stop-color="#b2d8fc"/><stop offset=".48" stop-color="#7da5d4"/><stop offset="1" stop-color="#5475aa"/></linearGradient></defs><path class="category-arrow-depth" d="M10.3 6.5H24.1C25 6.5 25.6 7.2 25.6 8.1V21.9C25.6 23.3 23.9 24 22.9 23L18.9 19L10.2 27.7C9.5 28.4 8.4 28.4 7.7 27.7L4.3 24.3C3.6 23.6 3.6 22.5 4.3 21.8L13 13.1L9 9.1C8 8.1 8.9 6.5 10.3 6.5Z"/><path fill="url(#exhibit-arrow-branding)" d="M10.3 6.5H24.1C25 6.5 25.6 7.2 25.6 8.1V21.9C25.6 23.3 23.9 24 22.9 23L18.9 19L10.2 27.7C9.5 28.4 8.4 28.4 7.7 27.7L4.3 24.3C3.6 23.6 3.6 22.5 4.3 21.8L13 13.1L9 9.1C8 8.1 8.9 6.5 10.3 6.5Z"/><path class="category-arrow-highlight" d="M11.2 8.2H23.4V13.2"/></svg></span></a>
@@ -62,7 +125,16 @@
 
     <div class="exhibition-rooms" id="work"><section class="work-room" id="work-exhibition" aria-labelledby="work-title">
 <div class="room-heading"><div><p class="eyebrow">01 / THE WORK EXHIBITION</p><h2 id="work-title">灵感落地，作品登场。</h2><p class="heading-note">十个精选项目，慢慢逛，找到你喜欢的灵感。</p></div><button class="replay" type="button" aria-label="重新播放 IP 作品导览"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 6.5A7 7 0 1 1 3.5 12M4 2.5v4H8"/></svg><span>再看一次</span></button></div>
-<div class="exhibit-stage photo-wall-stage"><div class="wall-wash" aria-hidden="true"></div><svg class="wall-light" viewBox="0 0 1280 755" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="wall-light-color" x1="0" y1="0" x2="1" y2=".45"><stop stop-color="#8bcaff"/><stop offset=".48" stop-color="#aaa4ed"/><stop offset="1" stop-color="#ed9ac7"/></linearGradient><linearGradient id="wall-light-pink" x1="1" y1="0" x2="0" y2="1"><stop stop-color="#ee9dc7"/><stop offset=".5" stop-color="#c0a6ed"/><stop offset="1" stop-color="#9ecffd"/></linearGradient><linearGradient id="wall-light-pearl" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#b9d9ff"/><stop offset=".5" stop-color="#ead2ea"/><stop offset="1" stop-color="#ffe9bf"/></linearGradient><mask id="wall-light-mask" maskUnits="userSpaceOnUse"><rect class="wall-mask-base" fill="white"/><g class="wall-mask-cards" fill="black"></g></mask><mask id="weave-mask-0" maskUnits="userSpaceOnUse" x="-400" y="-400" width="2200" height="3000"><rect x="-400" y="-400" width="2200" height="3000" fill="white"/><g class="weave-gaps-0" fill="black"></g></mask><mask id="weave-mask-1" maskUnits="userSpaceOnUse" x="-400" y="-400" width="2200" height="3000"><rect x="-400" y="-400" width="2200" height="3000" fill="white"/><g class="weave-gaps-1" fill="black"></g></mask><mask id="weave-mask-2" maskUnits="userSpaceOnUse" x="-400" y="-400" width="2200" height="3000"><rect x="-400" y="-400" width="2200" height="3000" fill="white"/><g class="weave-gaps-2" fill="black"></g></mask></defs><g mask="url(#wall-light-mask)"><g class="light-track light-track-0" mask="url(#weave-mask-0)"><path class="light-guide" d="M-180 430 C55 195 225 405 445 250 S800 190 960 425 S1240 410 1460 250"/><path class="light-halo" pathLength="1000" d="M-180 430 C55 195 225 405 445 250 S800 190 960 425 S1240 410 1460 250"/><path class="light-ribbon" pathLength="1000" d="M-180 430 C55 195 225 405 445 250 S800 190 960 425 S1240 410 1460 250"/><path class="light-white" pathLength="1000" d="M-180 430 C55 195 225 405 445 250 S800 190 960 425 S1240 410 1460 250"/></g><g class="light-track light-track-1" mask="url(#weave-mask-1)"><path class="light-guide" d="M1460 585 C1250 720 1120 390 940 450 S640 620 540 385 S185 275 -180 650"/><path class="light-halo" pathLength="1000" d="M1460 585 C1250 720 1120 390 940 450 S640 620 540 385 S185 275 -180 650"/><path class="light-ribbon" pathLength="1000" d="M1460 585 C1250 720 1120 390 940 450 S640 620 540 385 S185 275 -180 650"/><path class="light-white" pathLength="1000" d="M1460 585 C1250 720 1120 390 940 450 S640 620 540 385 S185 275 -180 650"/></g><g class="light-track light-track-2" mask="url(#weave-mask-2)"><path class="light-guide" d="M730 910 C580 740 570 585 665 455 S1045 170 820 -150"/><path class="light-halo" pathLength="1000" d="M730 910 C580 740 570 585 665 455 S1045 170 820 -150"/><path class="light-ribbon" pathLength="1000" d="M730 910 C580 740 570 585 665 455 S1045 170 820 -150"/><path class="light-white" pathLength="1000" d="M730 910 C580 740 570 585 665 455 S1045 170 820 -150"/></g></g></svg><i class="wall-bubble wall-bubble-one" aria-hidden="true"></i><i class="wall-bubble wall-bubble-two" aria-hidden="true"></i><figure class="presenter" role="img" aria-label="KALINA 画家 IP 举起画笔，依次介绍包装和品牌作品">
+<div class="exhibit-stage photo-wall-stage"><div class="wall-wash" aria-hidden="true"></div><svg class="wall-light v3-wall" viewBox="0 0 1280 755" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+  <defs><mask id="wall-light-mask" maskUnits="userSpaceOnUse"><rect class="wall-mask-base" x="-300" y="-300" width="1880" height="1355" fill="white"/><g class="wall-mask-cards" fill="black"></g></mask></defs>
+  <g mask="url(#wall-light-mask)"><svg width="100%" height="100%" viewBox="0 0 1280 755" preserveAspectRatio="none" overflow="visible">
+    <defs><linearGradient id="v3-wall-tone" gradientUnits="userSpaceOnUse" x1="0" x2="1280" y1="0" y2="0">
+  <stop stop-color="#c3e9fb"/><stop offset=".31" stop-color="#eefaff"/><stop offset=".53" stop-color="#fffafd"/><stop offset=".80" stop-color="#ffe7f4"/><stop offset="1" stop-color="#ffeff8"/></linearGradient><linearGradient id="v3-wall-echo-tone" gradientUnits="userSpaceOnUse" x1="0" x2="1280" y1="0" y2="0">
+  <stop stop-color="#ecfaff"/><stop offset=".31" stop-color="#eefaff"/><stop offset=".53" stop-color="#fffafd"/><stop offset=".80" stop-color="#ffe7f4"/><stop offset="1" stop-color="#ffe1f2"/></linearGradient><linearGradient id="v3-wall-main-glint-falloff"><stop stop-color="white" stop-opacity="0"/><stop offset=".34" stop-color="white" stop-opacity=".32"/><stop offset=".57" stop-color="white"/><stop offset="1" stop-color="white" stop-opacity="0"/></linearGradient>
+  <mask id="v3-wall-main-glint" maskUnits="userSpaceOnUse" x="-480" y="-160" width="2280" height="1300"><rect class="v3-moving-window " x="-400" y="-160" width="320" height="1300" fill="url(#v3-wall-main-glint-falloff)"/></mask><linearGradient id="v3-wall-echo-glint-falloff"><stop stop-color="white" stop-opacity="0"/><stop offset=".34" stop-color="white" stop-opacity=".32"/><stop offset=".57" stop-color="white"/><stop offset="1" stop-color="white" stop-opacity="0"/></linearGradient>
+  <mask id="v3-wall-echo-glint" maskUnits="userSpaceOnUse" x="-480" y="-160" width="2280" height="1300"><rect class="v3-moving-window reverse-window" x="-400" y="-160" width="320" height="1300" fill="url(#v3-wall-echo-glint-falloff)"/></mask></defs>
+    <g class="v3-wide"><g class="v3-filament" style="--v3-base:url(#v3-wall-tone)"><path class="v3-bed" d="M-440 208 C-70 86 108 128 278 192 C475 270 655 272 850 225 C1105 164 1305 163 1720 293"/><g class="v3-travelling" mask="url(#v3-wall-main-glint)"><path class="v3-aura" d="M-440 208 C-70 86 108 128 278 192 C475 270 655 272 850 225 C1105 164 1305 163 1720 293"/><path class="v3-core" d="M-440 208 C-70 86 108 128 278 192 C475 270 655 272 850 225 C1105 164 1305 163 1720 293"/></g></g><g class="v3-bead bead-0"><path class="bead-aura" d="M88.67 138.97l.001 .001"/><path class="bead-glass" d="M88.67 138.97l.001 .001"/><path class="bead-pin" d="M88.67 138.97l.001 .001"/></g><g class="v3-bead bead-1"><path class="bead-aura" d="M216.14 170.16l.001 .001"/><path class="bead-glass" d="M216.14 170.16l.001 .001"/><path class="bead-pin" d="M216.14 170.16l.001 .001"/></g><g class="v3-bead bead-2"><path class="bead-aura" d="M474.30 246.26l.001 .001"/><path class="bead-glass" d="M474.30 246.26l.001 .001"/><path class="bead-pin" d="M474.30 246.26l.001 .001"/></g><g class="v3-bead bead-3"><path class="bead-aura" d="M711.75 250.00l.001 .001"/><path class="bead-glass" d="M711.75 250.00l.001 .001"/><path class="bead-pin" d="M711.75 250.00l.001 .001"/></g><g class="v3-bead bead-4"><path class="bead-aura" d="M1086.75 187.20l.001 .001"/><path class="bead-glass" d="M1086.75 187.20l.001 .001"/><path class="bead-pin" d="M1086.75 187.20l.001 .001"/></g><g class="v3-bead bead-5"><path class="bead-aura" d="M1282.44 192.32l.001 .001"/><path class="bead-glass" d="M1282.44 192.32l.001 .001"/><path class="bead-pin" d="M1282.44 192.32l.001 .001"/></g><g class="v3-companion"><g class="v3-filament" style="--v3-base:url(#v3-wall-echo-tone)"><path class="v3-bed" d="M1720 295 C1425 339 1295 350 1070 270 C860 195 778 198 630 291 C458 399 325 553 136 622 C-86 703 -210 653 -440 560"/><g class="v3-travelling" mask="url(#v3-wall-echo-glint)"><path class="v3-aura" d="M1720 295 C1425 339 1295 350 1070 270 C860 195 778 198 630 291 C458 399 325 553 136 622 C-86 703 -210 653 -440 560"/><path class="v3-core" d="M1720 295 C1425 339 1295 350 1070 270 C860 195 778 198 630 291 C458 399 325 553 136 622 C-86 703 -210 653 -440 560"/></g></g><g class="v3-bead bead-0"><path class="bead-aura" d="M1311.04 326.03l.001 .001"/><path class="bead-glass" d="M1311.04 326.03l.001 .001"/><path class="bead-pin" d="M1311.04 326.03l.001 .001"/></g><g class="v3-bead bead-1"><path class="bead-aura" d="M905.82 223.09l.001 .001"/><path class="bead-glass" d="M905.82 223.09l.001 .001"/><path class="bead-pin" d="M905.82 223.09l.001 .001"/></g><g class="v3-bead bead-2"><path class="bead-aura" d="M422.20 445.42l.001 .001"/><path class="bead-glass" d="M422.20 445.42l.001 .001"/><path class="bead-pin" d="M422.20 445.42l.001 .001"/></g><g class="v3-bead bead-3"><path class="bead-aura" d="M283.67 546.92l.001 .001"/><path class="bead-glass" d="M283.67 546.92l.001 .001"/><path class="bead-pin" d="M283.67 546.92l.001 .001"/></g><g class="v3-bead bead-4"><path class="bead-aura" d="M-26.40 660.69l.001 .001"/><path class="bead-glass" d="M-26.40 660.69l.001 .001"/><path class="bead-pin" d="M-26.40 660.69l.001 .001"/></g></g></g><g class="v3-narrow"><g class="v3-filament" style="--v3-base:url(#v3-wall-tone)"><path class="v3-bed" d="M-440 310 C-40 350 160 310 360 301 C570 292 752 329 938 348 C1160 370 1370 350 1720 312"/><g class="v3-travelling" mask="url(#v3-wall-main-glint)"><path class="v3-aura" d="M-440 310 C-40 350 160 310 360 301 C570 292 752 329 938 348 C1160 370 1370 350 1720 312"/><path class="v3-core" d="M-440 310 C-40 350 160 310 360 301 C570 292 752 329 938 348 C1160 370 1370 350 1720 312"/></g></g><g class="v3-bead bead-0"><path class="bead-aura" d="M-11.12 325.79l.001 .001"/><path class="bead-glass" d="M-11.12 325.79l.001 .001"/><path class="bead-pin" d="M-11.12 325.79l.001 .001"/></g><g class="v3-bead bead-1"><path class="bead-aura" d="M238.40 309.23l.001 .001"/><path class="bead-glass" d="M238.40 309.23l.001 .001"/><path class="bead-pin" d="M238.40 309.23l.001 .001"/></g><g class="v3-bead bead-2"><path class="bead-aura" d="M524.61 302.51l.001 .001"/><path class="bead-glass" d="M524.61 302.51l.001 .001"/><path class="bead-pin" d="M524.61 302.51l.001 .001"/></g><g class="v3-bead bead-3"><path class="bead-aura" d="M782.00 329.21l.001 .001"/><path class="bead-glass" d="M782.00 329.21l.001 .001"/><path class="bead-pin" d="M782.00 329.21l.001 .001"/></g><g class="v3-bead bead-4"><path class="bead-aura" d="M1152.41 357.00l.001 .001"/><path class="bead-glass" d="M1152.41 357.00l.001 .001"/><path class="bead-pin" d="M1152.41 357.00l.001 .001"/></g><g class="v3-bead bead-5"><path class="bead-aura" d="M1357.47 347.42l.001 .001"/><path class="bead-glass" d="M1357.47 347.42l.001 .001"/><path class="bead-pin" d="M1357.47 347.42l.001 .001"/></g><g class="v3-companion"><g class="v3-filament" style="--v3-base:url(#v3-wall-echo-tone)"><path class="v3-bed" d="M1720 525 C1430 488 1240 493 1084 531 C894 577 674 611 454 584 C225 556 5 535 -440 601"/><g class="v3-travelling" mask="url(#v3-wall-echo-glint)"><path class="v3-aura" d="M1720 525 C1430 488 1240 493 1084 531 C894 577 674 611 454 584 C225 556 5 535 -440 601"/><path class="v3-core" d="M1720 525 C1430 488 1240 493 1084 531 C894 577 674 611 454 584 C225 556 5 535 -440 601"/></g></g><g class="v3-bead bead-0"><path class="bead-aura" d="M1321.27 500.57l.001 .001"/><path class="bead-glass" d="M1321.27 500.57l.001 .001"/><path class="bead-pin" d="M1321.27 500.57l.001 .001"/></g><g class="v3-bead bead-1"><path class="bead-aura" d="M911.86 566.80l.001 .001"/><path class="bead-glass" d="M911.86 566.80l.001 .001"/><path class="bead-pin" d="M911.86 566.80l.001 .001"/></g><g class="v3-bead bead-2"><path class="bead-aura" d="M598.88 593.48l.001 .001"/><path class="bead-glass" d="M598.88 593.48l.001 .001"/><path class="bead-pin" d="M598.88 593.48l.001 .001"/></g><g class="v3-bead bead-3"><path class="bead-aura" d="M199.26 560.21l.001 .001"/><path class="bead-glass" d="M199.26 560.21l.001 .001"/><path class="bead-pin" d="M199.26 560.21l.001 .001"/></g><g class="v3-bead bead-4"><path class="bead-aura" d="M-54.93 560.71l.001 .001"/><path class="bead-glass" d="M-54.93 560.71l.001 .001"/><path class="bead-pin" d="M-54.93 560.71l.001 .001"/></g></g></g>
+  </svg></g></svg><i class="wall-bubble wall-bubble-one" aria-hidden="true"></i><i class="wall-bubble wall-bubble-two" aria-hidden="true"></i><figure class="presenter" role="img" aria-label="KALINA 画家 IP 举起画笔，依次介绍包装和品牌作品">
  <p class="presenter-note" aria-live="polite">跟我一起，看看这些灵感。</p><div class="presenter-plinth" aria-hidden="true"></div>
  <div class="presenter-breathe"><svg class="rig" viewBox="0 0 940 1024" aria-hidden="true"><defs><clipPath id="body-clip"><rect x="0" y="0" width="920" height="1024"/></clipPath><clipPath id="arm-clip"><rect x="950" y="0" width="586" height="1024"/></clipPath></defs>
   <g class="arm-pivot"><g transform="translate(590 466) scale(.59) translate(-1044 -463)"><image href="./assets/presenter-kit-clean.webp" width="1536" height="1024" clip-path="url(#arm-clip)"/><circle id="brush-tip" cx="1467" cy="205" r="1" opacity="0"/></g></g>
@@ -78,11 +150,7 @@
 <a class="photo-card tone-1" href="./projects/tianjingsha/" aria-label="查看天净沙文创项目" data-tilt="3.7" style="--x:36%;--y:480px;--card-width:27%;--tilt:3.7deg;--drift-time:12.09s;--drift-delay:-9.1s"><div class="photo-panel"><div class="photo-topline"><span>08 / 插画设计</span><i aria-hidden="true"></i></div><div class="photo-image"><img loading="lazy" src="./assets/projects/tianjingsha/001.webp" alt="白朴天净沙系列诗词文创礼盒设计封面，国潮纹样与花鸟插画" decoding="async"></div><div class="photo-caption"><h2>天净沙文创</h2><span class="photo-arrow" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M11 6h14v14l-5-5-11 11-5-5 11-11Z"/></svg></span></div></div></a>
 <a class="photo-card tone-2" href="./projects/guanyi-blossoms/" aria-label="查看莞邑花开｜东莞城市符号插画展项目" data-tilt="-3.4" style="--x:68%;--y:515px;--card-width:30%;--tilt:-3.4deg;--drift-time:12.56s;--drift-delay:-10.4s"><div class="photo-panel"><div class="photo-topline"><span>09 / 插画设计</span><i aria-hidden="true"></i></div><div class="photo-image"><img loading="lazy" src="./assets/projects/guanyi-blossoms/001.webp" alt="莞邑花开 东莞城市符号插画展展览设计方案封面" decoding="async"></div><div class="photo-caption"><h2>莞邑花开 · 城市符号插画展</h2><span class="photo-arrow" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M11 6h14v14l-5-5-11 11-5-5 11-11Z"/></svg></span></div></div></a><a class="photo-card tone-1 photo-card--wanjiang" href="./projects/wanjiang-bookmarks/" aria-label="查看万江党校文创书签项目" data-tilt="2.7" style="--x:0%;--y:0px;--card-width:218px;--tilt:2.7deg;--drift-time:10.4s;--drift-delay:-7.5s"><div class="photo-panel"><div class="photo-topline"><span>10 / 插画设计</span><i aria-hidden="true"></i></div><div class="photo-image"><img loading="lazy" src="./assets/projects/wanjiang-bookmarks/cover.webp" alt="万江印象书签礼盒设计方案封面" decoding="async"></div><div class="photo-caption"><h2>万江党校文创书签</h2><span class="photo-arrow" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M11 6h14v14l-5-5-11 11-5-5 11-11Z"/></svg></span></div></div></a></div></div>
 </section><section class="about-exhibit" id="about" aria-labelledby="about-heading">
-  <svg class="about-thread" viewBox="0 0 1280 820" preserveAspectRatio="none" aria-hidden="true">
-    <defs><linearGradient id="about-thread-color"><stop stop-color="#b3d5fb"/><stop offset=".6" stop-color="#ddadd2"/><stop offset="1" stop-color="#c0b7ef"/></linearGradient></defs>
-    <path class="about-thread-base" d="M-150 710 C140 595 640 680 1430 835"/>
-    <path class="about-thread-light" pathLength="1000" d="M-150 710 C140 595 640 680 1430 835"/>
-  </svg>
+  
   <div class="about-exhibit-layout">
     <div class="creator-copy">
       <p class="creator-role">视觉设计师 <span>VISUAL DESIGNER</span></p>
@@ -136,7 +204,13 @@
   <footer class="creator-endnote"><span>每个作品，都有创作者的温度。</span><span>KALINA’S INSPIRATION GALLERY</span></footer>
 </section>
 <section class="contact-exhibit" id="contact" aria-labelledby="contact-title">
-  <svg class="contact-light" viewBox="0 0 1440 430" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="contact-thread-tone"><stop stop-color="#93c9fa"/><stop offset=".52" stop-color="#b4a9e7"/><stop offset="1" stop-color="#e6a0c8"/></linearGradient></defs><path class="contact-thread-base" d="M-140 190 C60 50 285 60 475 157 S830 272 1040 306 S1390 282 1550 124"/><path class="contact-thread-halo" pathLength="1000" d="M-140 190 C60 50 285 60 475 157 S830 272 1040 306 S1390 282 1550 124"/><path class="contact-thread-glow" pathLength="1000" d="M-140 190 C60 50 285 60 475 157 S830 272 1040 306 S1390 282 1550 124"/><path class="contact-thread-core" pathLength="1000" d="M-140 190 C60 50 285 60 475 157 S830 272 1040 306 S1390 282 1550 124"/></svg>
+  <svg class="contact-light v3-bridge" viewBox="0 0 1440 160" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+  <defs><linearGradient id="v3-bridge-tone" gradientUnits="userSpaceOnUse" x1="0" x2="1280" y1="0" y2="0">
+  <stop stop-color="#c3e9fb"/><stop offset=".31" stop-color="#eefaff"/><stop offset=".53" stop-color="#fffafd"/><stop offset=".80" stop-color="#ffe7f4"/><stop offset="1" stop-color="#ffeff8"/></linearGradient><linearGradient id="v3-bridge-glint-falloff"><stop stop-color="white" stop-opacity="0"/><stop offset=".34" stop-color="white" stop-opacity=".32"/><stop offset=".57" stop-color="white"/><stop offset="1" stop-color="white" stop-opacity="0"/></linearGradient>
+  <mask id="v3-bridge-glint" maskUnits="userSpaceOnUse" x="-480" y="-160" width="2280" height="1300"><rect class="v3-moving-window " x="-400" y="-160" width="320" height="1300" fill="url(#v3-bridge-glint-falloff)"/></mask></defs>
+  <g class="v3-wide"><g class="v3-filament" style="--v3-base:url(#v3-bridge-tone)"><path class="v3-bed" d="M-230 102 C45 31 207 12 350 35 C484 57 601 110 720 104 C863 97 940 25 1066 16 C1203 6 1355 24 1650 13"/><g class="v3-travelling" mask="url(#v3-bridge-glint)"><path class="v3-aura" d="M-230 102 C45 31 207 12 350 35 C484 57 601 110 720 104 C863 97 940 25 1066 16 C1203 6 1355 24 1650 13"/><path class="v3-core" d="M-230 102 C45 31 207 12 350 35 C484 57 601 110 720 104 C863 97 940 25 1066 16 C1203 6 1355 24 1650 13"/></g></g></g>
+  <g class="v3-narrow"><g class="v3-filament" style="--v3-base:url(#v3-bridge-tone)"><path class="v3-bed" d="M-230 70 C4 34 129 2 286 6 C502 12 635 27 815 58 C1036 96 1190 99 1410 82 C1500 75 1590 57 1650 47"/><g class="v3-travelling" mask="url(#v3-bridge-glint)"><path class="v3-aura" d="M-230 70 C4 34 129 2 286 6 C502 12 635 27 815 58 C1036 96 1190 99 1410 82 C1500 75 1590 57 1650 47"/><path class="v3-core" d="M-230 70 C4 34 129 2 286 6 C502 12 635 27 815 58 C1036 96 1190 99 1410 82 C1500 75 1590 57 1650 47"/></g></g></g>
+</svg>
   <div class="contact-inner">
     <div class="contact-intro">
       <div class="contact-heading"><p class="contact-kicker"><span></span>03 / THE NEXT IDEA</p><h2 id="contact-title">下一场灵感，<br>和你一起。</h2><p class="contact-description">聊聊品牌、包装，<br class="contact-mobile-break">或一个正在萌芽的新想法。</p></div>
@@ -170,5 +244,86 @@
 </section>
 </div>
   </main>
+<script>
+    (() => {
+      const light = document.querySelector('.runway-reflection');
+      const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+      let visible = true;
+      function update() {
+        if (reduced.matches || document.hidden || !visible) light.pauseAnimations?.();
+        else light.unpauseAnimations?.();
+      }
+      if ('IntersectionObserver' in window) new IntersectionObserver(([entry]) => {
+        visible = entry.isIntersecting;
+        update();
+      }).observe(light);
+      reduced.addEventListener?.('change', update);
+      document.addEventListener('visibilitychange', update);
+      update();
+    })();
+  </script>
+<script>(function positionExhibitionArcs() {
+  const stage = document.querySelector('.inspiration-stage');
+  const actor = stage.querySelector('.ip-motion-canvas') || stage.querySelector('.hero-ip');
+  const cards = [...stage.querySelectorAll('.category-card')];
+  const blue = stage.querySelector('#stage-arc-blue');
+  const rose = stage.querySelector('#stage-arc-rose');
+  const mobile = matchMedia('(max-width:739px)');
+
+  // Each knot shares a tangent with the next segment. Handle lengths follow
+  // the actual distance on screen, including on a tall portrait viewport.
+  function smoothPath(knots) {
+    const format = n => n.toFixed(2);
+    const point = ([x, y]) => format(x) + ' ' + format(y);
+    let d = 'M' + point(knots[0]);
+    for (let i = 1; i < knots.length; i++) {
+      const a = knots[i - 1], b = knots[i];
+      const reach = Math.hypot(b[0] - a[0], b[1] - a[1]) * .36;
+      const aFactor = reach / Math.hypot(a[2], a[3]);
+      const bFactor = reach / Math.hypot(b[2], b[3]);
+      d += ' C' + point([a[0] + aFactor*a[2], a[1] + aFactor*a[3]]) + ' ' +
+        point([b[0] - bFactor*b[2], b[1] - bFactor*b[3]]) + ' ' + point(b);
+    }
+    return d;
+  }
+
+  function layout() {
+    const frame = stage.getBoundingClientRect();
+    if (!frame.width || !frame.height) return;
+    const rect = actor.getBoundingClientRect();
+    const width = frame.width, height = frame.height;
+    const cross = [rect.left - frame.left + rect.width*.444, rect.top - frame.top + rect.height*.30];
+    const knot = (x, y, dx, dy) => [x*width, y*height, dx, dy];
+    function card(name, x, y, dx, dy) {
+      const el = stage.querySelector('.category-' + name);
+      return [el.offsetLeft + el.offsetWidth*x, el.offsetTop + el.offsetHeight*y, dx, dy];
+    }
+    let cool, warm;
+    if (mobile.matches) {
+      cool = [knot(1.12,.07,-1,-.14), card('branding',.56,.50,-1,.18),
+        [...cross,-.78,1], card('event-materials',.50,.64,-1,.49), knot(-.14,.75,-1,-.15)];
+      warm = [knot(-.13,.13,1,-.25), card('packaging',.40,.49,1,.04),
+        [...cross,.83,1], card('illustration',.72,.50,.11,1),
+        card('posters',.49,.54,-1,.12), knot(-.14,.84,-1,-.24)];
+    } else {
+      cool = [knot(-.13,.71,1,.08), card('event-materials',.50,.61,1,-.15),
+        [...cross,.66,-1], card('posters',.80,.82,1,-.10),
+        card('branding',.56,.48,1,.34), knot(1.13,.43,1,-.22)];
+      warm = [knot(-.12,.49,1,-.38), card('packaging',.49,.55,1,-.24),
+        [...cross,1,.48], card('illustration',.44,.55,1,.12), knot(1.12,.65,1,-.28)];
+    }
+    blue.ownerSVGElement.setAttribute('viewBox', '0 0 ' + width + ' ' + height);
+    blue.setAttribute('d', smoothPath(cool));
+    rose.setAttribute('d', smoothPath(warm));
+  }
+  layout();
+  if ('ResizeObserver' in window) {
+    const observer = new ResizeObserver(layout);
+    [stage, actor, ...cards].forEach(el => observer.observe(el));
+  }
+  window.addEventListener('resize', layout, {passive:true});
+  mobile.addEventListener?.('change', layout);
+})()</script>
+<script>(()=>{const sections=document.querySelectorAll('.v3-wall,.v3-bridge');if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{for(const entry of entries)entry.target.classList.toggle('v3-lights-visible',entry.isIntersecting)},{rootMargin:'40px'});for(const svg of sections)observer.observe(svg)}else{for(const svg of sections)svg.classList.add('v3-lights-visible')}})();</script>
 </body>
 </html>

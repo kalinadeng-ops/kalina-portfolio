@@ -29,3 +29,17 @@
     padding-top: var(--page-entry-heading-gap);
   }
 }
+
+/* Center the tags in the space between the introduction and the index. */
+@media (min-width: 761px) and (max-width: 1400px) and (min-height: 560px) and (any-pointer: coarse) and (orientation: landscape) {
+  .resume-page .resume-hero { padding-bottom: 0; }
+  .resume-page .resume-host { margin-bottom: 27px; }
+  .resume-page .resume-hero-copy {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 18px;
+  }
+  .resume-page .resume-intro { margin-bottom: 18px; }
+  .resume-page .resume-hero-tags { margin-block: auto; }
+}

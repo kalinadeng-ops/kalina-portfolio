@@ -12,7 +12,7 @@ if (workMenu && workMenuButton && workMenuPanel) {
   const currentCategory = document.body.dataset.case;
   const parentCategory = currentCategory
     ? window.kalinaSiteURL(`/work/${currentCategory}/`)
-    : document.querySelector('.project-topline a')?.href;
+    : document.querySelector('.project-topline a')?.href.split('#')[0];
   workMenuPanel.querySelectorAll('.work-menu-option').forEach(link => {
     if (link.href === parentCategory) {
       link.classList.add('is-current');

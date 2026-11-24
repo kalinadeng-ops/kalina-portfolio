@@ -42,6 +42,7 @@
   const number = album.querySelector('.album-stage-number');
   const notice = album.querySelector('.gallery-end-notice');
   const artButtons = [], thumbButtons = [];
+  const showAlbumArt = window.KalinaArtworkMotion.albumSlide(area, artButtons);
 
   sources.forEach((source, index) => {
     const button = document.createElement('button');
@@ -96,12 +97,12 @@
     active = Math.max(0, index);
     artButtons.forEach((button, i) => {
       const current = i === active;
-      button.classList.toggle('is-current', current);
       button.setAttribute('aria-hidden', String(!current));
       button.tabIndex = current ? 0 : -1;
       thumbButtons[i].setAttribute('aria-pressed', String(current));
       if (Math.abs(i - active) <= 1) button.querySelector('img').loading = 'eager';
     });
+    showAlbumArt(active, smooth);
     number.textContent = pad(active);
     count.querySelector('strong').textContent = pad(active);
     count.setAttribute('aria-label', `第 ${active + 1} 张，共 ${sources.length} 张`);
@@ -125,8 +126,7 @@
   reader.addEventListener('close', () => {
     if (!readerOpened) return;
     readerOpened = false;
-    const viewed = reader.querySelector('.reader-image')?.getAttribute('src');
-    const index = sources.findIndex(source => source.getAttribute('src') === viewed);
+    const index = Number(reader.dataset.activeIndex);
     if (index >= 0) select(index, false);
     if (compact.matches) artButtons[active].focus({ preventScroll: true });
   });

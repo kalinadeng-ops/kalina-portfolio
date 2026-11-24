@@ -1,0 +1,95 @@
+/* A single, compact introduction before the first pair of posters. */
+.category-exhibit .hall-intro {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 3vw, 40px);
+  min-height: 0;
+  padding: 12px 0 10px;
+}
+
+.hall-intro .hall-eyebrow {
+  margin: 0 0 6px;
+}
+
+.hall-intro h1 {
+  font-size: clamp(27px, 2.6vw, 36px);
+  line-height: 1.25;
+}
+
+.hall-intro .hall-host {
+  flex: none;
+  width: clamp(68px, 7vw, 94px);
+  height: auto;
+  aspect-ratio: 1;
+  margin: 0;
+}
+
+.hall-intro .hall-plinth {
+  height: 8%;
+  bottom: 0;
+}
+
+.hall-intro .hall-host-star {
+  width: 8%;
+  height: 8%;
+  left: -5%;
+  top: 45%;
+}
+
+.hall-intro .host-pearl {
+  width: 6%;
+  height: 6%;
+  right: -1%;
+  top: 28%;
+}
+
+.poster-hall-count {
+  align-self: end;
+  margin: 0 0 9px auto;
+  font-size: 12px;
+  letter-spacing: .04em;
+  white-space: nowrap;
+  color: #59718e;
+}
+
+.hall-gallery {
+  padding-top: 0;
+}
+
+.poster-hall-section-title {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.hall-stage {
+  padding-top: 20px;
+}
+
+@media (max-width: 760px) {
+  .hall-topline {
+    padding-top: 12px;
+  }
+
+  .category-exhibit .hall-intro {
+    gap: 16px;
+    padding-block: 9px 7px;
+  }
+
+  .hall-intro .hall-eyebrow {
+    font-size: 8px;
+    letter-spacing: .055em;
+  }
+
+  .poster-hall-count {
+    margin-bottom: 6px;
+    font-size: 11px;
+  }
+
+  .hall-stage {
+    padding-top: 15px;
+  }
+}

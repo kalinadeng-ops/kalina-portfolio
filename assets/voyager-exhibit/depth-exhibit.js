@@ -19,8 +19,7 @@
  const inspect=(index,trigger)=>{returnTo=trigger;buttons[index].click();};
  reader.addEventListener('close',()=>{
   if(returnTo?.classList.contains('depth-card')){
-   const viewed=reader.querySelector('.reader-image')?.getAttribute('src');
-   const index=images.findIndex(image=>image.getAttribute('src')===viewed);
+   const index=Number(reader.dataset.activeIndex);
    if(index>=0){depthSelect(index);returnTo=cards[index];}
   }
   if(returnTo&&returnTo.getClientRects().length)returnTo.focus({preventScroll:true});

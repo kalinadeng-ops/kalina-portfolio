@@ -3,10 +3,42 @@
   let sequence = 0;
   const steps = [1, 1.5, 2, 3, 4];
   const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  // Both album implementations keep their pages mounted. Move only the two
+  // displayed pages, including when a thumbnail skips several works.
+  function albumSlide(area, pages) {
+    let displayed = -1, request = 0;
+    return (index, smooth) => {
+      const version = ++request;
+      const reveal = () => {
+        if (version !== request || displayed === index) return;
+        area.classList.toggle('is-sliding', smooth && displayed >= 0);
+        pages.forEach((page, i) => {
+          page.classList.toggle('is-before', i < index);
+          page.classList.toggle('is-departing', i === displayed);
+          page.classList.toggle('is-current', i === index);
+        });
+        displayed = index;
+      };
+      const incoming = pages[index].querySelector('img');
+      if (smooth && displayed >= 0 && !incoming.complete && incoming.decode) incoming.decode().then(reveal, reveal);
+      else reveal();
+    };
+  }
+  function slidePair(incoming, outgoing, distance) {
+    const timing = {duration:320, easing:'cubic-bezier(.25,.72,.25,1)'};
+    const arriving = incoming.animate([{transform:'translateX(' + distance + 'px)'}, {transform:'none'}], timing);
+    const departing = outgoing.animate([{transform:'none'}, {transform:'translateX(' + -distance + 'px)'}], {...timing, fill:'forwards'});
+    const cancel = () => { outgoing.remove(); arriving.cancel(); departing.cancel(); };
+    return {cancel, finished:Promise.allSettled([arriving.finished, departing.finished]).then(cancel)};
+  }
+  window.KalinaArtworkMotion = {albumSlide, slidePair};
   window.KalinaImageZoom = {
     attach(reader, { onStep } = {}) {
       const viewport = reader.querySelector('.reader-image-viewport');
       const image = reader.querySelector('.reader-image');
+      const board = reader.querySelector('.reader-artboard');
+      let displayed = -1, imageRequest = 0, slide;
       const help = reader.querySelector('.reader-help');
       const oldButton = reader.querySelector('.reader-zoom');
       const tools = document.createElement('div');
@@ -240,8 +272,45 @@
       }).observe(viewport);
       image.addEventListener('load', scheduleMeasure);
       touchDevice.addEventListener?.('change', render);
+      function showImage(source, index) {
+        const version = ++imageRequest;
+        const url = source.fullSrc || source.src;
+        const reveal = () => {
+          if (version !== imageRequest || displayed === index) return;
+          const animate = reader.open && displayed >= 0 && !reducedMotion.matches && board.animate && image.naturalWidth > 0;
+          if (animate && slide) { slide.finished.then(reveal); return; }
+          let oldImage;
+          const direction = Math.sign(index - displayed);
+          if (animate) {
+            const frame = viewport.getBoundingClientRect(), bounds = image.getBoundingClientRect();
+            oldImage = image.cloneNode(false);
+            oldImage.removeAttribute('class');
+            oldImage.alt = '';
+            oldImage.setAttribute('aria-hidden', 'true');
+            Object.assign(oldImage.style, {position:'absolute', pointerEvents:'none', maxWidth:'none', maxHeight:'none',
+              left:(bounds.left - frame.left) + 'px', top:(bounds.top - frame.top) + 'px',
+              width:bounds.width + 'px', height:bounds.height + 'px'});
+            viewport.append(oldImage);
+          }
+          displayed = index;
+          reset();
+          Object.assign(image, {width:source.width, height:source.height, alt:source.alt, src:url});
+          measure();
+          if (!oldImage) return;
+          const distance = direction * viewport.clientWidth;
+          const running = slidePair(board, oldImage, distance);
+          slide = running;
+          running.finished.then(() => { if (slide === running) slide = null; });
+        };
+        if (!reader.open || displayed < 0 || displayed === index) { reveal(); return; }
+        const nextImage = new Image();
+        nextImage.src = url;
+        if (!nextImage.complete && nextImage.decode) nextImage.decode().then(reveal, reveal);
+        else reveal();
+      }
+      reader.addEventListener('close', () => { ++imageRequest; displayed = -1; slide?.cancel(); slide = null; });
       reset();
-      return { reset };
+      return { reset, showImage };
     }
   };
 })();

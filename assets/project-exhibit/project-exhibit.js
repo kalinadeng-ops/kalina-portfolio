@@ -1,7 +1,14 @@
 /* Responsive exhibition for the project detail pages. */
 (() => {
 const orders = {"hanging-coffee":[[[2,"/assets/projects/coffee-graphics-white.jpg",10417,6695],[1,"/assets/projects/coffee-cover.lossless.webp",2000,1321],[3,"/assets/projects/all/coffee-002.webp",2000,1321],[5,"/assets/projects/all/coffee-004.webp",2000,1321],[6,"/assets/projects/all/coffee-005.webp",2000,1321],[7,"/assets/projects/all/coffee-006.webp",3000,1928],[8,"/assets/projects/coffee-detail.lossless.webp",3000,1928],[11,"/assets/projects/all/coffee-010.webp",2000,1321],[10,"/assets/projects/all/coffee-009.webp",3000,1928],[9,"/assets/projects/all/coffee-008.webp",3000,1928],[4,"/assets/projects/coffee-scene.lossless.webp",3000,1928]]],"craft-beer":[[[1,"/assets/projects/juxi/001.lossless.webp",1588,991],[2,"/assets/projects/juxi/002.lossless.webp",3200,3200],[6,"/assets/projects/all/craft-face-008.webp",3000,4000],[5,"/assets/projects/all/craft-face-006.webp",3000,4000],[7,"/assets/projects/all/craft-face-010.webp",3000,4000],[4,"/assets/projects/all/craft-face-004.webp",3000,4000],[3,"/assets/projects/all/craft-face-002.webp",3000,4000],[13,"/assets/projects/all/craft-main-007.webp",3000,4000],[34,"/assets/projects/all/craft-main-030.webp",3000,4000],[24,"/assets/projects/all/craft-main-019.webp",3000,4000],[29,"/assets/projects/all/craft-main-024.webp",3000,4000],[14,"/assets/projects/all/craft-main-008.webp",3000,4000],[15,"/assets/projects/all/craft-main-009.webp",3000,4000],[35,"/assets/projects/all/craft-main-031.webp",3000,4000],[8,"/assets/projects/all/craft-main-001.webp",3000,4000],[16,"/assets/projects/all/craft-main-010.webp",3000,4000],[37,"/assets/projects/all/craft-main-035.webp",3000,4000],[9,"/assets/projects/all/craft-main-003.webp",3000,4000],[20,"/assets/projects/all/craft-main-016.webp",3000,4000],[31,"/assets/projects/all/craft-main-026.webp",3000,4000],[28,"/assets/projects/all/craft-main-023.webp",3000,4000],[17,"/assets/projects/all/craft-new-005.webp",3000,4000],[22,"/assets/projects/craft-blue-box.lossless.webp",3000,4000],[12,"/assets/projects/all/craft-new-002.webp",3000,4000],[32,"/assets/projects/craft-yellow-box.lossless.webp",3000,4000],[10,"/assets/projects/all/craft-new-001.webp",3000,4000],[19,"/assets/projects/all/craft-main-012.webp",3000,4000],[27,"/assets/projects/all/craft-main-022.webp",3000,4000],[38,"/assets/projects/all/craft-main-036.webp",3000,4000],[25,"/assets/projects/craft-boxes.lossless.webp",3000,4000],[26,"/assets/projects/all/craft-main-021.webp",3000,4000],[30,"/assets/projects/all/craft-main-025.webp",3000,4000],[23,"/assets/projects/all/craft-main-018.webp",3000,4000],[33,"/assets/projects/all/craft-main-029.webp",3000,4000],[40,"/assets/projects/all/craft-main-039.webp",3000,4000],[18,"/assets/projects/all/craft-main-011.webp",3200,3200],[39,"/assets/projects/all/craft-main-038.webp",3200,3200],[36,"/assets/projects/all/craft-main-034.webp",3200,3200],[11,"/assets/projects/all/craft-main-005.webp",3200,3200],[21,"/assets/projects/all/craft-main-017.webp",3200,3200]]],"lumirose-atoll":[[[1,"/assets/projects/lumirose-atoll/001.jpg",2000,2642],[7,"/assets/projects/lumirose-atoll/007.jpg",2000,2642],[2,"/assets/projects/lumirose-atoll/002.jpg",2000,2642],[3,"/assets/projects/lumirose-atoll/003.jpg",2000,2642],[4,"/assets/projects/lumirose-atoll/004.jpg",2000,2642],[5,"/assets/projects/lumirose-atoll/005.jpg",2000,2642],[6,"/assets/projects/lumirose-atoll/006.jpg",2000,2642],[8,"/assets/projects/lumirose-atoll/008.jpg",2000,2642],[9,"/assets/projects/lumirose-atoll/009.webp",1400,1781]]],"prismora":[[[1,"/assets/projects/prismora-cover.webp",2000,1321],[16,"/assets/projects/all/prismora-016.webp",2000,1321],[14,"/assets/projects/all/prismora-013.webp",2000,1321],[2,"/assets/projects/prismora-system.webp",2600,1463],[6,"/assets/projects/prismora-range.webp",2600,1463],[4,"/assets/projects/all/prismora-003.webp",4000,2250],[8,"/assets/projects/all/prismora-007.webp",4000,2250],[13,"/assets/projects/prismora-packaging.webp",2000,1321],[10,"/assets/projects/all/prismora-009.webp",2000,1321],[11,"/assets/projects/all/prismora-010.webp",2000,1321],[7,"/assets/projects/all/prismora-006.webp",2000,1321],[5,"/assets/projects/all/prismora-004.webp",2000,1321],[12,"/assets/projects/all/prismora-011.webp",2000,2642],[3,"/assets/projects/all/prismora-002.webp",2000,2642],[9,"/assets/projects/all/prismora-008.webp",2000,2642],[15,"/assets/projects/all/prismora-015.webp",2000,2642],[17,"/assets/projects/all/prismora-017.webp",2000,2642]]],"luminaere":[[[5,"/assets/projects/luminaere/005.jpg",2000,1321],[1,"/assets/projects/luminaere/001.lossless.webp",6667,3750],[2,"/assets/projects/luminaere/002.lossless.webp",1672,941],[7,"/assets/projects/luminaere/007.jpg",2000,1321],[3,"/assets/projects/luminaere/003.jpg",2000,1321],[4,"/assets/projects/luminaere/004.jpg",2000,1321],[6,"/assets/projects/luminaere/006.jpg",2000,1321],[11,"/assets/projects/luminaere/011.jpg",2000,1321],[9,"/assets/projects/luminaere/009.jpg",2000,2642],[8,"/assets/projects/luminaere/008.jpg",2000,2642],[10,"/assets/projects/luminaere/010.jpg",2000,2642],[12,"/assets/projects/luminaere/012.webp",4000,2250],[13,"/assets/projects/luminaere/013.webp",4000,2250]]],"miaoxing-tea":[[[1,"/assets/projects/miaoxing-tea/001.webp",3840,2560],[2,"/assets/projects/miaoxing-tea/002.webp",3840,2560],[4,"/assets/projects/miaoxing-tea/004.webp",3840,2560],[8,"/assets/projects/miaoxing-tea/008.webp",3840,2560],[9,"/assets/projects/miaoxing-tea/009.webp",3840,2560],[10,"/assets/projects/miaoxing-tea/010.webp",3840,2560],[5,"/assets/projects/miaoxing-tea/005.webp",3840,2560],[11,"/assets/projects/miaoxing-tea/011.webp",3840,2560],[12,"/assets/projects/miaoxing-tea/012.webp",3840,2560],[13,"/assets/projects/miaoxing-tea/013.webp",3840,2560],[14,"/assets/projects/miaoxing-tea/014.webp",3840,2560],[15,"/assets/projects/miaoxing-tea/015.webp",3840,2560],[16,"/assets/projects/miaoxing-tea/016.webp",3840,2560],[6,"/assets/projects/miaoxing-tea/006.webp",3840,2560],[18,"/assets/projects/miaoxing-tea/018.webp",3840,2560],[7,"/assets/projects/miaoxing-tea/007.webp",3840,2560],[17,"/assets/projects/miaoxing-tea/017.webp",3840,2560],[3,"/assets/projects/miaoxing-tea/003.webp",3840,2560]]],"probiotic-lozenges":[[[6,"/assets/projects/probiotic-lozenges/006.webp",3840,2304],[1,"/assets/projects/probiotic-lozenges/001.webp",3840,2304],[2,"/assets/projects/probiotic-lozenges/002.webp",3840,2304],[8,"/assets/projects/probiotic-lozenges/008.webp",3840,2536],[11,"/assets/projects/probiotic-lozenges/011.webp",3840,2537],[3,"/assets/projects/probiotic-lozenges/003.webp",3840,2304],[9,"/assets/projects/probiotic-lozenges/009.webp",3840,2536],[5,"/assets/projects/probiotic-lozenges/005.webp",3840,2304],[7,"/assets/projects/probiotic-lozenges/007.webp",3840,2304],[12,"/assets/projects/probiotic-lozenges/012.webp",2304,3840],[4,"/assets/projects/probiotic-lozenges/004.webp",3200,3840],[13,"/assets/projects/probiotic-lozenges/013.webp",2906,3840],[10,"/assets/projects/probiotic-lozenges/010.webp",2906,3840]]],"tianjingsha":[[[1,"/assets/projects/tianjingsha/001.webp",4961,3508],[2,"/assets/projects/tianjingsha/002.webp",4961,3508],[4,"/assets/projects/tianjingsha/004.webp",4961,3508],[3,"/assets/projects/tianjingsha/003.webp",4961,3508],[6,"/assets/projects/tianjingsha/006.webp",4961,3508],[5,"/assets/projects/tianjingsha/005.webp",4961,3508],[8,"/assets/projects/tianjingsha/008.webp",4961,3508],[7,"/assets/projects/tianjingsha/007.webp",4961,3508],[10,"/assets/projects/tianjingsha/010.webp",4961,3508],[9,"/assets/projects/tianjingsha/009.webp",4961,3508],[11,"/assets/projects/tianjingsha/011.webp",4961,3508],[12,"/assets/projects/tianjingsha/012.webp",4961,3508],[13,"/assets/projects/tianjingsha/013.webp",4961,3508],[14,"/assets/projects/tianjingsha/014.webp",4961,3508],[15,"/assets/projects/tianjingsha/015.webp",4961,3508]]],"guanyi-blossoms":[[[1,"/assets/projects/guanyi-blossoms/001.webp",3000,1688],[4,"/assets/projects/guanyi-blossoms/004.webp",3000,1688],[6,"/assets/projects/guanyi-blossoms/006.webp",3000,1688],[5,"/assets/projects/guanyi-blossoms/005.webp",3000,1688],[2,"/assets/projects/guanyi-blossoms/002.webp",3000,1688],[3,"/assets/projects/guanyi-blossoms/003.webp",3000,1688],[7,"/assets/projects/guanyi-blossoms/007.webp",3000,1688],[12,"/assets/projects/guanyi-blossoms/012.webp",3000,1688],[8,"/assets/projects/guanyi-blossoms/008.webp",3000,1688],[13,"/assets/projects/guanyi-blossoms/013.webp",3000,1688],[14,"/assets/projects/guanyi-blossoms/014.webp",3000,1688],[15,"/assets/projects/guanyi-blossoms/015.webp",3000,1688],[16,"/assets/projects/guanyi-blossoms/016.webp",3000,1688],[17,"/assets/projects/guanyi-blossoms/017.webp",3000,1688],[9,"/assets/projects/guanyi-blossoms/009.webp",3000,1688],[10,"/assets/projects/guanyi-blossoms/010.webp",3000,1688],[11,"/assets/projects/guanyi-blossoms/011.webp",3000,1688],[18,"/assets/projects/guanyi-blossoms/018.webp",3000,1688],[19,"/assets/projects/guanyi-blossoms/019.webp",3000,1688],[20,"/assets/projects/guanyi-blossoms/020.webp",3000,1688],[21,"/assets/projects/guanyi-blossoms/021.webp",3000,1688],[22,"/assets/projects/guanyi-blossoms/022.webp",3000,1688],[23,"/assets/projects/guanyi-blossoms/023.webp",3000,1688],[24,"/assets/projects/guanyi-blossoms/024.webp",3000,1688],[25,"/assets/projects/guanyi-blossoms/025.webp",3000,1688],[26,"/assets/projects/guanyi-blossoms/026.webp",3000,1688],[27,"/assets/projects/guanyi-blossoms/027.webp",3000,1688],[28,"/assets/projects/guanyi-blossoms/028.webp",3000,1688],[29,"/assets/projects/guanyi-blossoms/029.webp",3000,1688],[30,"/assets/projects/guanyi-blossoms/030.webp",3000,1688],[31,"/assets/projects/guanyi-blossoms/031.webp",3000,1688],[32,"/assets/projects/guanyi-blossoms/032.webp",3000,1688],[33,"/assets/projects/guanyi-blossoms/033.webp",3000,1688],[34,"/assets/projects/guanyi-blossoms/034.webp",3000,1688],[35,"/assets/projects/guanyi-blossoms/035.webp",3000,1688],[36,"/assets/projects/guanyi-blossoms/036.webp",3000,1688],[37,"/assets/projects/guanyi-blossoms/037.webp",3000,1688]]],"wanjiang-bookmarks":[[[1,"/assets/projects/wanjiang-bookmarks/001.webp",2600,1463],[2,"/assets/projects/wanjiang-bookmarks/003.webp",2600,1463],[3,"/assets/projects/wanjiang-bookmarks/004.webp",2600,1463],[4,"/assets/projects/wanjiang-bookmarks/005.webp",2600,1463],[5,"/assets/projects/wanjiang-bookmarks/006.webp",2600,1463],[6,"/assets/projects/wanjiang-bookmarks/007.webp",2600,1463],[7,"/assets/projects/wanjiang-bookmarks/002.webp",2600,1463]],[[5,"/assets/projects/wanjiang-bookmarks/012.webp",2600,1954],[2,"/assets/projects/wanjiang-bookmarks/009.webp",2600,1954],[4,"/assets/projects/wanjiang-bookmarks/011.webp",2600,1977],[3,"/assets/projects/wanjiang-bookmarks/010.webp",2600,1954],[1,"/assets/projects/wanjiang-bookmarks/008.webp",2600,1954],[6,"/assets/projects/wanjiang-bookmarks/013.jpg",1280,959]]],"songshanhu-qingma":[[[1,"/assets/projects/songshanhu-qingma/001.webp",3200,1800],[2,"/assets/projects/songshanhu-qingma/003.webp",3200,1800],[3,"/assets/projects/songshanhu-qingma/002.webp",3200,1800],[4,"/assets/projects/songshanhu-qingma/004.webp",3200,1800],[5,"/assets/projects/songshanhu-qingma/005.webp",3200,1800],[6,"/assets/projects/songshanhu-qingma/006.webp",3200,1800]]]};
-function createReader(sources, title, id) {
+function createThumbnail(url) {
+  const image = document.createElement('img');
+  Object.assign(image, {alt: '', loading: 'lazy', decoding: 'async', draggable: false});
+  image.src = url;
+  return image;
+}
+
+function createReader(sources, title, id, showSceneLabels = false) {
   const pad = index => String(index + 1).padStart(2, '0');
   const reader=document.createElement('dialog');
   reader.className='art-reader';reader.setAttribute('aria-labelledby',`reader-title-${id}`);reader.dataset.zoomed='false';
@@ -9,7 +16,6 @@ function createReader(sources, title, id) {
   if (id > 1) reader.querySelector('svg').remove();
   reader.querySelector('.reader-project').textContent = title;
   document.body.append(reader);
-  const image=reader.querySelector('.reader-image');
   const imageViewport=reader.querySelector('.reader-image-viewport');
   const close=reader.querySelector('.reader-close');
   const previous=reader.querySelector('.reader-prev');
@@ -19,11 +25,11 @@ function createReader(sources, title, id) {
   const notice=reader.querySelector('.gallery-end-notice');
   const thumbs=reader.querySelector('.reader-thumbnails');
   let active=0,noticeTimer,opener,bodyOverflow='',bodyPadding='',rootOverflow='';
-  const zoomController = window.KalinaImageZoom.attach(reader, { onStep: delta => show(active + delta) });
+  const zoomController = window.KalinaImageZoom.attach(reader, sources.length > 1 ? { onStep: delta => show(active + delta) } : {});
   const thumbButtons=[];
   sources.forEach((source,index)=>{
     const button=document.createElement('button');button.type='button';button.className='reader-thumb';button.setAttribute('aria-label',`切换到第 ${index+1} 张作品`);button.setAttribute('aria-pressed','false');
-    const img=document.createElement('img');Object.assign(img,{src:source.src,alt:'',loading:'lazy',draggable:false});
+    const img=createThumbnail(source.thumbSrc || source.src);
     button.append(img);thumbs.append(button);thumbButtons.push(button);button.addEventListener('click',()=>show(index));
   });
   function resetZoom(){
@@ -32,14 +38,16 @@ function createReader(sources, title, id) {
   function show(index){
     if(index>=sources.length){if(notice.hidden){notice.hidden=false;noticeTimer=setTimeout(()=>{notice.hidden=true;},1500);}return;}
     clearTimeout(noticeTimer);notice.hidden=true;
-    active=Math.max(0,index);resetZoom();
+    active=Math.max(0,index);
     const source=sources[active];
-    image.width=source.width;image.height=source.height;image.alt=source.alt;image.src=source.src;
+    if (showSceneLabels) reader.querySelector('.reader-project').textContent = source.label || title;
+    reader.dataset.activeIndex=String(active);
+    zoomController.showImage(source, active);
     current.textContent=pad(active);count.setAttribute('aria-label',`第 ${active+1} 张，共 ${sources.length} 张`);count.style.setProperty('--reader-progress',String((active+1)/sources.length));
     previous.disabled=active===0;next.setAttribute('aria-disabled',String(active===sources.length-1));
     thumbButtons.forEach((button,index)=>button.setAttribute('aria-pressed',String(index===active)));
     const selected=thumbButtons[active];thumbs.scrollTo({left:Math.max(0,selected.offsetLeft-thumbs.offsetLeft-thumbs.clientWidth/2+selected.offsetWidth/2),behavior:'instant'});
-    [active-1,active+1].filter(index=>index>=0&&index<sources.length).forEach(index=>{const prefetch=new Image();prefetch.src=sources[index].src;});
+    [active-1,active+1].filter(index=>index>=0&&index<sources.length).forEach(index=>{const prefetch=new Image();prefetch.src=sources[index].fullSrc || sources[index].src;});
     if(previous.disabled&&document.activeElement===previous)imageViewport.focus({preventScroll:true});
   }
   function openReader(index,button){
@@ -48,7 +56,7 @@ function createReader(sources, title, id) {
     if(gutter>0)document.body.style.paddingRight=`${gutter}px`;
     document.body.style.overflow='hidden';document.documentElement.style.overflow='hidden';
     show(index);reader.showModal();
-    requestAnimationFrame(()=>show(index));
+    requestAnimationFrame(()=>{ if (reader.open) resetZoom(); });
   }
   close.addEventListener('click',()=>reader.close());
   reader.addEventListener('close',()=>{
@@ -56,7 +64,7 @@ function createReader(sources, title, id) {
   });
   previous.addEventListener('click',()=>show(active-1));next.addEventListener('click',()=>show(active+1));
   reader.addEventListener('keydown',event=>{
-    if(reader.dataset.zoomed==='true')return;
+    if(reader.dataset.zoomed==='true' || sources.length === 1)return;
     if(event.key==='ArrowLeft'||event.key==='ArrowRight'){event.preventDefault();show(active+(event.key==='ArrowRight'?1:-1));}
   });
 
@@ -71,9 +79,7 @@ function createDepth(section, images, reader, openReader, id) {
  const inspect=(index,trigger)=>{returnTo=trigger;openReader(index,trigger);};
  reader.addEventListener('close',()=>{
   if(!returnTo)return;
-  const viewed=reader.querySelector('.reader-image').getAttribute('src');
-  const index=images.findIndex(image=>image.getAttribute('src')===viewed);
-  if(index>=0)depthSelect(index);
+  depthSelect(Number(reader.dataset.activeIndex));
   if(desktop.matches)cards[depthActive].focus({preventScroll:true});
   returnTo=null;
  });
@@ -99,7 +105,7 @@ function createDepth(section, images, reader, openReader, id) {
   card.addEventListener('click',()=>{if(index===depthActive)inspect(index,card);else if(Math.abs(index-depthActive)===1)depthSelect(index);});
   depthStage.append(card);cards.push(card);
   const thumb=document.createElement('button');thumb.type='button';thumb.className='depth-thumb';thumb.setAttribute('aria-label',`选择第 ${index+1} 件景深展品：${labels[index]}`);thumb.setAttribute('title',labels[index]);thumb.setAttribute('aria-pressed','false');
-  const tiny=img.cloneNode(true);tiny.alt='';tiny.loading='lazy';tiny.draggable=false;
+  const tiny=createThumbnail(img.dataset.thumbSrc || img.src);
   const number=document.createElement('span');number.textContent=pad(index);thumb.append(tiny,number);
   thumb.addEventListener('click',()=>depthSelect(index));depthThumbRail.append(thumb);depthThumbs.push(thumb);
  });
@@ -207,6 +213,7 @@ function createAlbum(gallery, sources, reader, openReader, id, compact, sheetBut
   const number = album.querySelector('.album-stage-number');
   const notice = album.querySelector('.gallery-end-notice');
   const artButtons = [], thumbButtons = [];
+  const showAlbumArt = window.KalinaArtworkMotion.albumSlide(area, artButtons);
 
   sources.forEach((source, index) => {
     const button = document.createElement('button');
@@ -231,10 +238,7 @@ function createAlbum(gallery, sources, reader, openReader, id, compact, sheetBut
     thumb.type = 'button';
     thumb.className = 'album-thumb';
     thumb.setAttribute('aria-label', `选择第 ${index + 1} 件展册作品`);
-    const tiny = source.cloneNode(true);
-    tiny.alt = '';
-    tiny.draggable = false;
-    tiny.loading = 'lazy';
+    const tiny = createThumbnail(source.dataset.thumbSrc || source.src);
     const label = document.createElement('span');
     label.textContent = pad(index);
     thumb.append(tiny, label);
@@ -265,7 +269,6 @@ function createAlbum(gallery, sources, reader, openReader, id, compact, sheetBut
     if (sources[active].dataset.label) album.querySelector('.album-hint').textContent = sources[active].dataset.label + ' · 左右滑动翻页';
     artButtons.forEach((button, i) => {
       const current = i === active;
-      button.classList.toggle('is-current', current);
       button.setAttribute('aria-hidden', String(!current));
       button.tabIndex = current ? 0 : -1;
       thumbButtons[i].setAttribute('aria-pressed', String(current));
@@ -275,6 +278,7 @@ function createAlbum(gallery, sources, reader, openReader, id, compact, sheetBut
         if (!art.hasAttribute('src')) art.src = sources[i].getAttribute('src');
       }
     });
+    showAlbumArt(active, smooth);
     number.textContent = pad(active);
     count.querySelector('strong').textContent = pad(active);
     count.setAttribute('aria-label', `第 ${active + 1} 张，共 ${sources.length} 张`);
@@ -298,9 +302,7 @@ function createAlbum(gallery, sources, reader, openReader, id, compact, sheetBut
   reader.addEventListener('close', () => {
     if (!readerOpened && !sheetButtons) return;
     readerOpened = false;
-    const viewed = reader.querySelector('.reader-image')?.getAttribute('src');
-    const index = sources.findIndex(source => source.getAttribute('src') === viewed);
-    if (index >= 0) select(index, false);
+    select(Number(reader.dataset.activeIndex), false);
     const returnTarget = compact.matches ? artButtons[active] : sheetButtons?.[active];
     returnTarget?.focus({ preventScroll: true });
   });
@@ -343,13 +345,195 @@ function createAlbum(gallery, sources, reader, openReader, id, compact, sheetBut
   compact.addEventListener('change', () => { finishGesture(); if (compact.matches) select(active, false); });
 }
 
+function connectPosterScenes(display, title, readerId) {
+  const buttons = [...display.querySelectorAll('button')];
+  const scenes = buttons.map(button => {
+    const image = button.querySelector('img');
+    return {
+      src: image.src, thumbSrc: image.dataset.thumbSrc, label: image.dataset.label,
+      alt: image.alt, width: Number(image.getAttribute('width')),
+      height: Number(image.getAttribute('height')),
+    };
+  });
+  let sceneReader;
+  buttons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      if (!sceneReader) {
+        sceneReader = createReader(scenes, title, readerId, true);
+        if (scenes.length === 1) sceneReader.reader.dataset.singlePoster = '';
+      }
+      sceneReader.openReader(index, button);
+    });
+  });
+  if (scenes.length < 3) return;
+
+  const figures = buttons.map(button => button.closest('figure'));
+  const indexBar = document.createElement('div');
+  indexBar.className = 'poster-wall-index';
+  indexBar.setAttribute('role', 'group');
+  indexBar.setAttribute('aria-label', display.dataset.indexLabel || '选择应用场景');
+  const choices = scenes.map((scene, index) => {
+    const choice = document.createElement('button');
+    choice.type = 'button';
+    choice.setAttribute('aria-label', '查看' + scene.label);
+    const thumbnail = new Image();
+    thumbnail.src = scene.thumbSrc || scene.src;
+    thumbnail.alt = '';
+    thumbnail.width = 120;
+    thumbnail.height = 80;
+    thumbnail.loading = 'lazy';
+    thumbnail.decoding = 'async';
+    const label = document.createElement('span');
+    label.textContent = figures[index].dataset.shortLabel || scene.label;
+    choice.append(thumbnail, label);
+    choice.addEventListener('click', () => selectScene(index));
+    indexBar.append(choice);
+    return choice;
+  });
+  let displayedScene = -1, sceneRequest = 0, sceneSlide;
+  function selectScene(index) {
+    const version = ++sceneRequest;
+    choices.forEach((choice, i) => choice.setAttribute('aria-pressed', String(i === index)));
+    const incoming = figures[index];
+    const image = incoming.querySelector('img');
+    image.loading = 'eager';
+    const reveal = () => {
+      if (version !== sceneRequest || displayedScene === index) return;
+      if (sceneSlide) { sceneSlide.finished.then(reveal); return; }
+      const previous = displayedScene;
+      displayedScene = index;
+      const animate = previous >= 0 && incoming.animate && !matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let outgoing;
+      if (animate) {
+        outgoing = document.createElement('div');
+        outgoing.className = 'poster-scene-departure';
+        outgoing.setAttribute('aria-hidden', 'true');
+        outgoing.append(figures[previous].querySelector('img').cloneNode());
+        const caption = figures[previous].querySelector('figcaption');
+        if (caption) outgoing.append(caption.cloneNode(true));
+        display.append(outgoing);
+      }
+      figures.forEach((figure, i) => { figure.hidden = i !== index; });
+      if (animate) {
+        sceneSlide = window.KalinaArtworkMotion.slidePair(incoming, outgoing, Math.sign(index - previous) * display.clientWidth);
+        sceneSlide.finished.then(() => { sceneSlide = null; });
+      }
+    };
+    if (displayedScene >= 0 && !image.complete && image.decode) image.decode().then(reveal, reveal);
+    else reveal();
+  }
+  selectScene(0);
+  display.append(indexBar);
+}
+
+function insertPosterSections(template, information, sources, openReader) {
+  const content = template.content.cloneNode(true);
+  let galleryComparison;
+  const comparisons = {
+    format: ['海报版式对照', 'Format Comparison'],
+    variation: ['方案对照', 'Design Variations'],
+    series: ['系列对照', 'Poster Series'],
+  };
+  const [compareTitle, compareEnglish] = comparisons[template.dataset.comparison] || comparisons.format;
+  const sections = [
+    { grid: '.poster-comparison-grid', id: 'poster-comparison', title: compareTitle, english: compareEnglish, hint: '点击海报，放大查看' },
+    { grid: '.poster-wall-display', id: 'poster-wall', title: template.dataset.wallHeading || '空间应用模拟', english: template.dataset.wallEnglish || 'Exhibition Mockup', hint: '' },
+    { grid: '.poster-details-grid', id: 'poster-details', title: '设计细节', english: 'Design Details', hint: '点击局部，查看原海报' },
+  ];
+  for (const { grid: selector, id, title, english, hint } of sections) {
+    const grid = content.querySelector(selector);
+    if (!grid?.children.length) continue;
+    if (id === 'poster-comparison') {
+      const images = Array.from(grid.querySelectorAll('figure img'));
+      if (images.length < 2) continue;
+      const columns = images.map(image => {
+        const ratio = Number(image.getAttribute('width')) / Number(image.getAttribute('height'));
+        // A pair shares a physical height. In a group, reserve a readable width for portraits.
+        if (images.length === 2) return `minmax(0, ${ratio}fr)`;
+        if (ratio < 1) return 'minmax(0, .8fr)';
+        return ratio < 2 ? 'minmax(0, 1.5fr)' : 'minmax(0, 2.2fr)';
+      });
+      grid.style.setProperty('--format-columns', columns.join(' '));
+    }
+    const section = document.createElement('section');
+    section.className = 'poster-details';
+    section.id = id;
+    section.setAttribute('aria-labelledby', id + '-heading');
+    section.innerHTML = `<div class="poster-details-head"><h2 id="${id}-heading">${title}</h2><p><span lang="en">${english}</span>${hint}</p></div>`;
+    const linkedSources = new Set();
+    for (const button of grid.querySelectorAll('button[data-original]')) {
+      const originalURL = new URL(button.dataset.original, document.baseURI).href;
+      const index = sources.findIndex(source => (source.fullSrc || source.src) === originalURL);
+      if (index < 0) continue;
+      linkedSources.add(index);
+      button.setAttribute('aria-haspopup', 'dialog');
+      button.addEventListener('click', () => openReader(index, button));
+    }
+    section.append(grid);
+    information.before(section);
+    if (id === 'poster-wall') {
+      connectPosterScenes(grid, title, original.length + 1);
+      const sourceNote = content.querySelector('[data-campus-source-note]');
+      if (sourceNote) section.append(sourceNote);
+    }
+    if (id === 'poster-comparison') {
+      if (template.hasAttribute('data-primary-comparison') && linkedSources.size === sources.length) galleryComparison = section;
+      if (template.hasAttribute('data-merge-comparison') && linkedSources.size === grid.children.length) galleryComparison = section;
+    }
+  }
+  return galleryComparison;
+}
+
+function mergePosterViews(gallery, browse, comparison) {
+  gallery.classList.add('poster-merged-gallery');
+  browse.querySelector('.curated-intro')?.remove();
+  comparison.className = 'poster-format-view';
+  comparison.querySelector('.poster-details-head').remove();
+  comparison.removeAttribute('aria-labelledby');
+  comparison.setAttribute('aria-label', '海报版式对照');
+  browse.after(comparison);
+
+  const controls = document.createElement('div');
+  controls.className = 'poster-view-switch';
+  controls.setAttribute('role', 'group');
+  controls.setAttribute('aria-label', '设计图查看方式');
+  gallery.querySelector('.coffee-design-heading').after(controls);
+  const views = [browse, comparison];
+  const buttons = views.map((view, index) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.textContent = index === 0 ? '逐张浏览' : '三版对照';
+    button.setAttribute('aria-controls', view.id);
+    button.addEventListener('click', () => {
+      select(view);
+      history.replaceState(history.state, '', '#' + view.id);
+    });
+    controls.append(button);
+    return button;
+  });
+  function select(active) {
+    views.forEach((view, index) => {
+      view.hidden = view !== active;
+      buttons[index].setAttribute('aria-pressed', String(view === active));
+    });
+  }
+  select(location.hash === '#' + comparison.id ? comparison : browse);
+  window.addEventListener('hashchange', () => {
+    const requested = views.find(view => location.hash === '#' + view.id);
+    if (requested) {
+      select(requested);
+      gallery.scrollIntoView({block:'start', behavior:'instant'});
+    }
+  });
+}
+
 const root = document.getElementById('project-root');
-const configuration = orders[document.body.dataset.project];
+const configuration = orders[document.body.dataset.project] || [];
 const original = [...(root?.querySelectorAll('.coffee-carousel') || [])];
 const title = root?.querySelector('.coffee-top h1');
 const information = root?.querySelector('.coffee-information');
 const ordered = original.filter(carousel => !carousel.hasAttribute('data-source-order'));
-if (!configuration || ordered.length !== configuration.length || !title || !information) return;
+if (!original.length || ordered.length !== configuration.length || !title || !information) return;
 
 // Validate every source before replacing the fallback carousels.
 const galleries = original.map(carousel => {
@@ -357,7 +541,7 @@ const galleries = original.map(carousel => {
   if (carousel.hasAttribute('data-source-order')) {
     if (!figures.length || !figures.every(img => img.getAttribute('src') && Number(img.getAttribute('width')) > 0 && Number(img.getAttribute('height')) > 0)) return null;
     return figures.map(img => ({
-      src: img.src, alt: img.alt, label: img.dataset.label,
+      src: img.src, fullSrc: img.closest('a')?.href, thumbSrc: img.dataset.thumbSrc, alt: img.alt, label: img.dataset.label,
       width: Number(img.getAttribute('width')), height: Number(img.getAttribute('height'))
     }));
   }
@@ -375,6 +559,7 @@ const compact=matchMedia('(max-width:1023px)');
 function applyPresentation() {
   document.body.dataset.mobileExhibit=compact.matches?'album':'';
   root.querySelectorAll('.curated-count').forEach(count => {
+    if (count.hasAttribute('data-single-poster')) return;
     const fieldLayout = count.closest('[data-field-layout]')?.dataset.fieldLayout;
     const isAlbum = fieldLayout ? fieldLayout === 'album' : compact.matches;
     count.querySelector('span').textContent = isAlbum ? '／ 掌上展册' : fieldLayout ? '／ 现场总览' : '／ 策展总览';
@@ -404,6 +589,18 @@ original.forEach((carousel, index) => {
   const sources=galleries[index];
   const count=sources.length;
   root.insertBefore(gallerySection, information);
+  const {reader,openReader}=createReader(sources,title.textContent,id);
+  const posterTemplate = id === 1 && document.getElementById('poster-details-template');
+  const comparison = posterTemplate && insertPosterSections(posterTemplate, information, sources, openReader);
+  const meta=carousel.nextElementSibling;
+  if(meta?.classList.contains('coffee-carousel-meta'))meta.remove();
+  if (comparison && posterTemplate.hasAttribute('data-primary-comparison')) {
+    gallerySection.id = 'curated-gallery';
+    gallerySection.removeAttribute('aria-labelledby');
+    gallerySection.querySelector('.coffee-design-heading').remove();
+    carousel.replaceWith(comparison);
+    return;
+  }
   const section=document.createElement('section');
   section.className='curated-gallery';
   section.id=id===1?'curated-gallery':`curated-gallery-${id}`;
@@ -416,17 +613,30 @@ original.forEach((carousel, index) => {
     section.querySelector('.curated-guide img').alt='';
   }
   if (carousel.dataset.countUnit) section.querySelector('.curated-count').firstChild.data = count + ' ' + carousel.dataset.countUnit + ' ';
-  const images=sources.map(({src,alt,width,height,label}) => {
+  const images=sources.map(({src,alt,width,height,label,thumbSrc}) => {
     const image=document.createElement('img');
-    Object.assign(image,{src,alt,width,height,loading:'lazy',decoding:'async',draggable:false});
+    Object.assign(image,{alt,width,height,loading:'lazy',decoding:'async',draggable:false});
+    image.src=src;
     if (label) image.dataset.label = label;
+    if (thumbSrc) image.dataset.thumbSrc = thumbSrc;
     return image;
   });
-  const {reader,openReader}=createReader(sources,title.textContent,id);
-  const meta=carousel.nextElementSibling;
   carousel.replaceWith(section);
-  if(meta?.classList.contains('coffee-carousel-meta'))meta.remove();
-  if (gallerySection.hasAttribute('data-photo-sheet')) {
+  if (posterTemplate && count === 1) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'single-poster-art';
+    button.setAttribute('aria-haspopup', 'dialog');
+    button.setAttribute('aria-label', '放大查看' + title.textContent + '海报');
+    images[0].loading = 'eager';
+    button.append(images[0]);
+    button.addEventListener('click', () => openReader(0, button));
+    section.append(button);
+    const caption = section.querySelector('.curated-count');
+    caption.dataset.singlePoster = '';
+    caption.textContent = '点击海报，放大查看';
+    reader.dataset.singlePoster = '';
+  } else if (gallerySection.hasAttribute('data-photo-sheet')) {
     const albumView = matchMedia('(max-width: 739px), (orientation: portrait) and (any-pointer: coarse), (max-width: 1023px) and (max-height: 540px) and (any-pointer: coarse)');
     function updateFieldLayout() {
       gallerySection.dataset.fieldLayout = albumView.matches ? 'album' : 'sheet';
@@ -440,6 +650,7 @@ original.forEach((carousel, index) => {
     createDepth(section,images,reader,openReader,id);
     createAlbum(section,images,reader,openReader,id,compact);
   }
+  if (comparison && posterTemplate.hasAttribute('data-merge-comparison')) mergePosterViews(gallerySection, section, comparison);
 });
 compact.addEventListener('change',applyPresentation);
 applyPresentation();
@@ -447,4 +658,26 @@ const position = () => {
   if (location.hash === '#project-information') information.scrollIntoView({block:'start',behavior:'instant'});
 };
 if (document.readyState === 'complete') position(); else addEventListener('load',position,{once:true});
+const mergedGallery = ['#curated-gallery', '#poster-comparison'].includes(location.hash) && root.querySelector('.poster-merged-gallery');
+const posterSection = mergedGallery || (['#poster-details', '#poster-comparison', '#poster-wall'].includes(location.hash)
+  ? document.getElementById(location.hash.slice(1)) : null);
+if (posterSection) {
+  // On first load the gallery and the title above the anchor resize as the
+  // site fonts and responsive rules settle. Stop tracking on user input.
+  const events = new AbortController();
+  const align = () => {
+    if (!events.signal.aborted) posterSection.scrollIntoView({block:'start',behavior:'instant'});
+  };
+  const layout = new ResizeObserver(align);
+  const release = () => { events.abort(); layout.disconnect(); };
+  for (const element of root.querySelectorAll('.coffee-top-band, .coffee-design-gallery, #poster-comparison')) layout.observe(element);
+  for (const event of ['pointerdown','touchstart','wheel','keydown','hashchange','pagehide']) {
+    window.addEventListener(event, release, {passive:true,signal:events.signal});
+  }
+  const loaded = () => {
+    document.fonts.ready.then(align);
+    setTimeout(release, 3000);
+  };
+  if (document.readyState === 'complete') loaded(); else window.addEventListener('load',loaded,{once:true,signal:events.signal});
+}
 })();

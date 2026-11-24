@@ -51,7 +51,6 @@
   reader.className='art-reader';reader.setAttribute('aria-labelledby','reader-title');reader.dataset.zoomed='false';
   reader.innerHTML='<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="reader-arrow-tone" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c3def6"/><stop offset=".5" stop-color="#8fb3dc"/><stop offset="1" stop-color="#6889b4"/></linearGradient></defs></svg><header class="reader-header"><h2 class="reader-heading" id="reader-title">作品细看<small>DESIGN VIEW</small></h2><p class="reader-project">VOYAGER COFFEE ROASTERS</p><div class="reader-actions"><button type="button" class="reader-button reader-zoom" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4M7.5 10.5h6m-3-3v6"/></svg><span>放大细节</span></button><button type="button" class="reader-button reader-close" aria-label="关闭细看，返回总览" autofocus><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div></header><div class="reader-stage"><button type="button" class="reader-arrow reader-prev" aria-label="上一张作品"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 4.1 21 12 4.5 19.9 10.2 12Z"/></svg></button><div class="reader-image-viewport" tabindex="0" role="region" aria-label="作品图像，可放大查看"><figure class="reader-artboard"><img class="reader-image" decoding="async" draggable="false"></figure></div><button type="button" class="reader-arrow reader-next" aria-label="下一张作品"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 4.1 21 12 4.5 19.9 10.2 12Z"/></svg></button><div class="reader-notice-slot" role="status" aria-live="polite"><div class="gallery-end-notice" hidden><span class="gallery-end-spark" aria-hidden="true">✦</span><span>已经是最后一张啦~</span></div></div></div><footer class="reader-footer"><div class="reader-footer-top"><span class="reader-pagination" aria-live="polite" aria-atomic="true"><span class="reader-page-star" aria-hidden="true">✦</span><span class="reader-page-current">01</span><span aria-hidden="true">/</span><span>'+pad(sources.length-1)+'</span><span class="reader-progress" aria-hidden="true"></span></span><p class="reader-help">选择比例放大 · 拖动画面查看细节</p></div><div class="reader-thumbnails" role="group" aria-label="细看作品导航"></div></footer>';
   document.body.append(reader);
-  const image=reader.querySelector('.reader-image');
   const imageViewport=reader.querySelector('.reader-image-viewport');
   const close=reader.querySelector('.reader-close');
   const previous=reader.querySelector('.reader-prev');
@@ -74,9 +73,10 @@
   function show(index){
     clearTimeout(noticeTimer);notice.hidden=true;
     if(index>=sources.length){notice.hidden=false;noticeTimer=setTimeout(()=>{notice.hidden=true;},1500);return;}
-    active=Math.max(0,index);resetZoom();
+    active=Math.max(0,index);
     const source=sources[active];
-    image.width=source.width;image.height=source.height;image.alt=source.alt;image.src=source.src;
+    reader.dataset.activeIndex=String(active);
+    zoomController.showImage(source, active);
     current.textContent=pad(active);count.setAttribute('aria-label',`第 ${active+1} 张，共 ${sources.length} 张`);count.style.setProperty('--reader-progress',String((active+1)/sources.length));
     previous.disabled=active===0;next.setAttribute('aria-disabled',String(active===sources.length-1));
     thumbButtons.forEach((button,index)=>button.setAttribute('aria-pressed',String(index===active)));
@@ -90,7 +90,7 @@
     if(gutter>0)document.body.style.paddingRight=`${gutter}px`;
     document.body.style.overflow='hidden';document.documentElement.style.overflow='hidden';
     show(index);reader.showModal();
-    requestAnimationFrame(()=>show(index));
+    requestAnimationFrame(()=>{ if (reader.open) resetZoom(); });
   }
   close.addEventListener('click',()=>reader.close());
   reader.addEventListener('close',()=>{
