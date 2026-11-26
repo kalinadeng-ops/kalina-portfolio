@@ -1,0 +1,75 @@
+name: Transfer four approved poster blobs
+"on":
+  push:
+    branches:
+      - 'codex-approved-poster-transfer-*'
+permissions:
+  contents: write
+jobs:
+  transfer:
+    if: github.repository == 'kalinadeng-ops/kalina-portfolio' && github.event.deleted == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Read transfer parts at the triggering commit
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # official v4.2.2
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: |
+            .approved-poster-transfer
+      - name: Validate source images and write four Git blobs
+        shell: bash
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import base64
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+          from urllib.request import Request, urlopen
+
+          # Complete all four integrity checks before writing any objects.
+          expected = [(30, 852174, '240c11e915f47027bb931a579242fc55bbe1895f29056ef33f51503b50512246', '8bc0186d84622cfe75ab6e33c8c9238f8ad1b95a', 2), (37, 888298, '807a5245462eb4314e43eea16259684e0dc870023b48e1bcd8cd7d0a29edd303', '44ebf326c7ff2aca4dc633bc21fedb7ffa7fe83d', 2), (40, 1041624, 'fe4dae4d0a4e9efa174e15c4eff304b139e17c5aaee605c2a78456f07d14d963', '0ab966e002ba9911e94ba2544e473f6e96769f01', 3), (43, 1052144, 'dca15be4e6ec7783a7ebd9f0353b32e3d22f697fb8e2c1c2968934499117e4c2', 'd21f6473e5a891c64794fdc00140ad5adb689193', 3)]
+          verified = []
+          for index, size, checksum, blob, count in expected:
+              parts = []
+              for n in range(count):
+                  piece = (Path('.approved-poster-transfer') / str(index) / f'{n:02}.b64').read_bytes()
+                  length = min(450_000, size - 450_000 * n)
+                  if len(piece) != 4 * ((length + 2) // 3):
+                      raise ValueError(f'Invalid part length for image {index}, part {n}')
+                  parts.append(piece)
+              encoded = b''.join(parts)
+              image = base64.b64decode(encoded, validate=True)
+              digest = hashlib.sha256(image).hexdigest()
+              prefix = f'blob {len(image)}\0'.encode('ascii')
+              object_id = hashlib.sha1(prefix + image).hexdigest()
+              if len(image) != size or digest != checksum or object_id != blob:
+                  raise ValueError(f'Integrity check failed for image {index}')
+              verified.append((index, blob, encoded.decode('ascii')))
+
+          endpoint = 'https://api.github.com/repos/kalinadeng-ops/kalina-portfolio/git/blobs'
+          headers = {
+              'Accept': 'application/vnd.github+json',
+              'Content-Type': 'application/json',
+              'User-Agent': 'KALINA-approved-poster-transfer',
+              'Authorization': 'Bearer ' + os.environ['GITHUB_TOKEN'],
+          }
+          for index, expected_sha, content in verified:
+              payload = json.dumps({'encoding': 'base64', 'content': content}).encode('utf-8')
+              request = Request(endpoint, data=payload, headers=headers, method='POST')
+              with urlopen(request, timeout=60) as response:
+                  if response.status != 201:
+                      raise RuntimeError(f'Unexpected HTTP status {response.status}')
+                  returned = json.load(response)['sha']
+              if returned != expected_sha:
+                  raise ValueError(f'Returned object ID differed for image {index}')
+              print(f'{index} {returned}', flush=True)
+              with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as summary:
+                  summary.write(f'- {index}: {returned}\n')
+          PY
