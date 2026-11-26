@@ -19,10 +19,10 @@
     {
       "slug": "poster-crunch",
       "name": "脆响",
-      "en": "Crunch",
-      "type": "海苔米脆 · 零食品牌",
-      "cover": "/assets/poster-collection/thumbs/D01-2.webp",
-      "alt": "《脆响》完整海报"
+      "en": "GUKA · Crunch",
+      "type": "谷咔 GUKA · 海苔米脆",
+      "cover": "/assets/poster-collection/thumbs/D01-2.webp?v=1a73c943cc5d",
+      "alt": "谷咔 GUKA《脆响》海苔米脆海报"
     },
     {
       "slug": "poster-mist-index",
