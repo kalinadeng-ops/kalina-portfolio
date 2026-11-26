@@ -60,15 +60,15 @@ const projects = {
     }
   },
   'womens-day-food-festival': {
-    title: "三八美食节", english: "Festival Posters", category: '海报设计', categoryKey: 'posters',
-    type: "美食节系列海报", cover: '/assets/projects/womens-day-food-festival/001.webp', coverAlt: "三八美食节活动海报，浅杏色底上排列粉色标题和糖果连饰，两侧的饮品、草莓与甜甜圈围住展讯。",
+    title: "三八美食节", english: "Food Festival Poster", category: '海报设计', categoryKey: 'posters',
+    type: "美食节活动海报", cover: '/assets/projects/womens-day-food-festival/001.webp', coverAlt: "三八美食节活动海报，浅杏色底上排列粉色标题和糖果连饰，两侧的饮品、草莓与甜甜圈围住展讯。",
     coverDetails: { preview: '/assets/projects/womens-day-food-festival/preview/001.webp', thumb: '/assets/projects/womens-day-food-festival/thumb/001.webp', width: 3000, height: 1875 },
     next: 'youth-graduation-season', nextName: "青春毕业季",
     exhibit: {
-      heading: "三八美食节", kicker: "美食节系列海报", subtitle: "同一组美食节海报中的活动通知与「全牛宴」主题",
+      heading: "三八美食节", kicker: "美食节活动海报", subtitle: "校园美食活动宣传海报",
       number: '05', discipline: 'POSTER DESIGN', coverCaption: "活动通知", noFilm: true,
-      note: '走近一点，看看设计的细节。', labels: [["作品内容", "Project Overview"], ["系列编排", "Series Design"]],
-      info: ["这一组三八美食节海报包括活动通知和「全牛宴」主题版。通知版标明 3 月 8 日、翰墨堂，主题版在相同位置写入宴席名称。", "两张都保留粉色圆体标题、浅杏色背景和顶部吊挂图案。替换两侧插画与标题下方的信息，就能在统一版面里区分活动通知与宴席主题。"]
+      note: '走近一点，看看设计的细节。', labels: [["项目背景", "Project Brief"], ["视觉与版式", "Visual & Layout"]],
+      info: ["围绕三八节校园美食活动制作的宣传海报，用于活动预告与现场导引。以文学与传媒学院署名、3 月 8 日和翰墨堂组成信息框架，面向校内师生传递轻松、友好的活动氛围。观看者先读到醒目的活动名称，再找到时间与地点，快速获得参与所需的信息。","以浅杏色为底、草莓粉为主色，通过圆润标题与手绘甜点建立统一视觉。标题放大居中，顶部的糖果与纸杯蛋糕组成横向装饰带；饮品、草莓和甜甜圈收在下方两角，为活动信息留出空间。点状纹理与小星形补充节日气氛，形成「活动名称—时间地点—甜点装饰」的阅读层级。"]
     }
   },
   'youth-graduation-season': {

@@ -1,0 +1,42 @@
+.poster-design-intro {
+  --intro-ink: #365477;
+  --intro-muted: #6481a0;
+  --intro-edge: #ffffffd9;
+  width: min(1156px, calc(100% - 96px));
+  margin: 8px auto 32px;
+  padding: 26px 30px 28px;
+  border: 1px solid var(--intro-edge);
+  border-radius: 22px;
+  color: var(--intro-ink);
+  background: linear-gradient(110deg, #f5fbffde, #ffffffb3 58%, #fff5fbe0);
+  box-shadow: inset 0 2px 3px #ffffffc9, 0 11px 24px #759ec21a;
+  scroll-margin-top: 100px;
+}
+.poster-design-intro__heading { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 24px; }
+.poster-design-intro__heading h2 { margin: 0; color: var(--intro-ink); font-size: 22px; line-height: 1.4; letter-spacing: .02em; }
+.poster-design-intro__heading span { color: var(--intro-muted); font-size: 11px; line-height: 1.5; letter-spacing: .04em; }
+.poster-design-intro dl { display: grid; grid-template-columns: 1.05fr 1fr 1.3fr; margin: 0; }
+.poster-design-intro--two dl { grid-template-columns: 1fr 1.3fr; }
+.poster-design-intro__field { min-width: 0; padding-inline: 24px; border-left: 1px solid #adc3dc66; }
+.poster-design-intro__field:first-child { padding-left: 0; border-left: 0; }
+.poster-design-intro__field:last-child { padding-right: 0; }
+.poster-design-intro dt { margin: 0 0 9px; color: var(--intro-muted); font-size: 12px; line-height: 1.6; letter-spacing: .06em; }
+.poster-design-intro dd { margin: 0; font-size: 16px; line-height: 1.8; overflow-wrap: anywhere; }
+.poster-design-intro__field:first-child dd { font-weight: 600; }
+@media(max-width:1000px) {
+  .poster-design-intro { width: calc(100% - 48px); padding: 24px; }
+  .poster-design-intro__field { padding-inline: 18px; }
+  .poster-design-intro__heading h2 { font-size: 20px; }
+}
+@media(max-width:700px) {
+  .poster-design-intro { width: calc(100% - 40px); margin: 4px auto 26px; padding: 22px 20px; border-radius: 18px; scroll-margin-top: 82px; }
+  .poster-design-intro__heading { margin-bottom: 18px; gap: 12px; }
+  .poster-design-intro__heading h2 { font-size: 20px; }
+  .poster-design-intro__heading span { font-size: 10px; }
+  .poster-design-intro dl { display: block; }
+  .poster-design-intro__field { display: grid; grid-template-columns: 66px minmax(0,1fr); gap: 12px; padding: 13px 0; border-left: 0; border-top: 1px solid #adc3dc66; }
+  .poster-design-intro__field:first-child { padding-top: 0; border-top: 0; }
+  .poster-design-intro__field:last-child { padding-bottom: 0; }
+  .poster-design-intro dt { margin: 3px 0 0; font-size: 12px; }
+  .poster-design-intro dd { font-size: 15px; line-height: 1.8; }
+}
