@@ -39,8 +39,8 @@ const cases = {
     intro: '把想象，画成一场展。',
     evidence: ['创作主题与用途', '草图与完整原稿', '系列及应用场景'],
     application: '完整插画、局部细节、不同媒介的应用',
-    projectNote: '城市记忆与四季诗意，在插画中展开。',
-    projects: [{ slug: 'guanyi-blossoms', name: '莞邑花开｜东莞城市符号插画展', en: 'Illustration Exhibition', type: '插画与展览视觉设计', cover: '/assets/projects/guanyi-blossoms/001.webp', alt: '莞邑花开 东莞城市符号插画展展览设计方案封面' }, { slug: 'tianjingsha', name: '天净沙文创', en: 'Seasonal Illustration', type: '四季插画与诗词文创', cover: '/assets/projects/tianjingsha/001.webp', alt: '白朴天净沙系列诗词文创礼盒封面' }, { slug: 'wanjiang-bookmarks', name: '万江党校文创书签', en: 'Cultural Bookmarks', type: '插画与文创设计', cover: '/assets/projects/wanjiang-bookmarks/cover.webp', alt: '万江印象书签礼盒设计方案封面' }]
+    projectNote: '城市记忆、饮食文化与四季诗意，在插画中展开。',
+    projects: [{ slug: 'heritage-food', name: '一味一传 · 非遗美食插画', en: 'A Taste of Heritage', type: '传统饮食文化插画系列', cover: '/assets/projects/heritage-food/cover.webp', alt: '南翔小笼制作场景，新工笔淡彩非遗美食插画' }, { slug: 'guanyi-blossoms', name: '莞邑花开｜东莞城市符号插画展', en: 'Illustration Exhibition', type: '插画与展览视觉设计', cover: '/assets/projects/guanyi-blossoms/001.webp', alt: '莞邑花开 东莞城市符号插画展展览设计方案封面' }, { slug: 'tianjingsha', name: '天净沙文创', en: 'Seasonal Illustration', type: '四季插画与诗词文创', cover: '/assets/projects/tianjingsha/001.webp', alt: '白朴天净沙系列诗词文创礼盒封面' }, { slug: 'wanjiang-bookmarks', name: '万江党校文创书签', en: 'Cultural Bookmarks', type: '插画与文创设计', cover: '/assets/projects/wanjiang-bookmarks/cover.webp', alt: '万江印象书签礼盒设计方案封面' }]
   },
   posters: {
     number: '05', name: '海报设计', en: 'Poster Design', next: 'packaging', nextName: '包装设计',
