@@ -5,13 +5,13 @@ window.KALINA_PROJECT_GALLERY['hulu-xiaozao'] = [
     "title": "品牌与包装设计",
     "items": [
       {
-        "src": "/projects/hulu-xiaozao/media/brand-board.webp",
-        "preview": "/projects/hulu-xiaozao/media/brand-board.webp",
-        "thumb": "/projects/hulu-xiaozao/media/brand-board-sm.webp",
+        "src": "/projects/hulu-xiaozao/media/brand-construction.webp",
+        "preview": "/projects/hulu-xiaozao/media/brand-construction.webp",
+        "thumb": "/projects/hulu-xiaozao/media/brand-construction-sm.webp",
         "width": 3600,
         "height": 2400,
-        "alt": "猫耳饭碗与中文字标的珊瑚色和反白应用",
-        "caption": "品牌标志"
+        "alt": "呼噜小灶标志标准制图。左侧以网格、中轴线和尺寸标注展示图文组合比例，右侧展示猫耳饭碗的矢量轮廓、路径锚点和曲线控制柄。",
+        "caption": "标志标准制图"
       },
       {
         "src": "/projects/hulu-xiaozao/media/packaging-board.webp",
