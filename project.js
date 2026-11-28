@@ -1,4 +1,21 @@
 const projects = {
+  'hulu-xiaozao': {
+    title: '呼噜小灶', english: 'Hulu Xiaozao', category: '包装设计', categoryKey: 'packaging',
+    type: '猫粮品牌与包装设计', cover: '/projects/hulu-xiaozao/media/shot-01.webp',
+    coverAlt: '呼噜小灶猫粮包装正面，杏色袋身印着三只围绕猫爬架玩耍的猫',
+    coverDetails: { preview: '/projects/hulu-xiaozao/media/shot-01.webp', thumb: '/projects/hulu-xiaozao/media/shot-01-sm.webp', width: 1536, height: 1024 },
+    next: 'lumirose-atoll', nextName: 'LUMIROSE ATOLL 肤屿玫瑰',
+    exhibit: {
+      heading: '呼噜小灶', kicker: '猫粮品牌与包装设计', subtitle: 'Hulu Xiaozao · 鲜肉低温烘焙全价猫粮',
+      note: '一起看看，猫咪的小灶开饭了。', number: '01', coverCaption: '包装正面', noFilm: true,
+      labels: [['项目概述', 'Project overview'], ['品牌标志', 'Brand identity'], ['包装视觉', 'Packaging design']],
+      info: [
+        '呼噜小灶是一款鸡肉配方猫粮的包装设计。“呼噜”是猫咪放松时的声音，“小灶”让人想到特意为它准备的一餐。',
+        '标志以饭碗为轮廓，碗沿两端翘起，像一对猫耳。一缕热气从碗中升起，与下方的“呼噜小灶”四字组合，印在袋口的粉色竖带上。',
+        '杏色袋身衬出湖蓝色猫爬架，三只猫的动作把视线从产品名带向袋底。背面以图标和分栏整理配方信息，两块珊瑚粉侧面分别收纳喂养说明和品牌资料。'
+      ]
+    }
+  },
   'bike8-asian-championship': {
     title: '2024 年 bike8 亚洲锦标赛', english: 'bike8 Asian Championship', category: '海报设计', categoryKey: 'posters',
     type: '赛事海报设计', cover: '/assets/projects/bike8-asian-championship/001.webp',
