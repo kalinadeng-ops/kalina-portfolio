@@ -1,9 +1,9 @@
 const projects = {
   'hulu-xiaozao': {
     title: '呼噜小灶', english: 'Hulu Xiaozao', category: '包装设计', categoryKey: 'packaging',
-    type: '猫粮品牌与包装设计', cover: '/projects/hulu-xiaozao/media/project-cover.webp?v=2',
-    coverAlt: '呼噜小灶项目封面，左侧为猫粮包装正面渲染图，右侧以灰调豆沙色品牌字标与暖灰色副标题',
-    coverDetails: { preview: '/projects/hulu-xiaozao/media/project-cover.webp?v=2', thumb: '/projects/hulu-xiaozao/media/project-cover-sm.webp?v=2', width: 1536, height: 1024 },
+    type: '猫粮品牌与包装设计', cover: '/projects/hulu-xiaozao/media/project-cover.webp?v=3',
+    coverAlt: '呼噜小灶项目封面，左侧为猫粮包装正面渲染图，右侧为豆沙色原版标志，猫耳饭碗居中在上，「呼噜小灶」四字横排在下',
+    coverDetails: { preview: '/projects/hulu-xiaozao/media/project-cover.webp?v=3', thumb: '/projects/hulu-xiaozao/media/project-cover-sm.webp?v=3', width: 1536, height: 1024 },
     next: 'lumirose-atoll', nextName: 'LUMIROSE ATOLL 肤屿玫瑰',
     exhibit: {
       heading: '呼噜小灶', kicker: '猫粮品牌与包装设计', subtitle: 'Hulu Xiaozao · 鲜肉低温烘焙全价猫粮',
