@@ -5,6 +5,15 @@ window.KALINA_PROJECT_GALLERY['hulu-xiaozao'] = [
     "title": "品牌与包装设计",
     "items": [
       {
+        "src": "/projects/hulu-xiaozao/media/shot-01.webp",
+        "preview": "/projects/hulu-xiaozao/media/shot-01.webp",
+        "thumb": "/projects/hulu-xiaozao/media/shot-01-sm.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "呼噜小灶猫粮包装正面，杏色袋身印着三只围绕猫爬架玩耍的猫",
+        "caption": "包装正面"
+      },
+      {
         "src": "/projects/hulu-xiaozao/media/brand-board.webp",
         "preview": "/projects/hulu-xiaozao/media/brand-board.webp",
         "thumb": "/projects/hulu-xiaozao/media/brand-board-sm.webp",

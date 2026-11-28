@@ -1,13 +1,13 @@
 const projects = {
   'hulu-xiaozao': {
     title: '呼噜小灶', english: 'Hulu Xiaozao', category: '包装设计', categoryKey: 'packaging',
-    type: '猫粮品牌与包装设计', cover: '/projects/hulu-xiaozao/media/shot-01.webp',
-    coverAlt: '呼噜小灶猫粮包装正面，杏色袋身印着三只围绕猫爬架玩耍的猫',
-    coverDetails: { preview: '/projects/hulu-xiaozao/media/shot-01.webp', thumb: '/projects/hulu-xiaozao/media/shot-01-sm.webp', width: 1536, height: 1024 },
+    type: '猫粮品牌与包装设计', cover: '/projects/hulu-xiaozao/media/project-cover.webp',
+    coverAlt: '呼噜小灶项目封面，左侧为猫粮包装正面渲染图，右侧以深陶红色标题搭配猫粮品牌与包装设计副标题',
+    coverDetails: { preview: '/projects/hulu-xiaozao/media/project-cover.webp', thumb: '/projects/hulu-xiaozao/media/project-cover-sm.webp', width: 1536, height: 1024 },
     next: 'lumirose-atoll', nextName: 'LUMIROSE ATOLL 肤屿玫瑰',
     exhibit: {
       heading: '呼噜小灶', kicker: '猫粮品牌与包装设计', subtitle: 'Hulu Xiaozao · 鲜肉低温烘焙全价猫粮',
-      note: '一起看看，猫咪的小灶开饭了。', number: '01', coverCaption: '包装正面', noFilm: true,
+      note: '一起看看，猫咪的小灶开饭了。', number: '01', coverCaption: '项目封面', noFilm: true,
       labels: [['项目概述', 'Project overview'], ['品牌标志', 'Brand identity'], ['包装视觉', 'Packaging design']],
       info: [
         '呼噜小灶是一款鸡肉配方猫粮的包装设计。“呼噜”是猫咪放松时的声音，“小灶”让人想到特意为它准备的一餐。',
