@@ -6,6 +6,7 @@ const cases = {
     evidence: ['包装原稿与准确文字', '成品照片或渲染图', '设计过程与版本取舍'],
     application: '包装正面、侧面、系列与实际展示场景',
     projects: [
+      { slug: 'hulu-xiaozao', name: '呼噜小灶', en: 'Hulu Xiaozao', type: '猫粮品牌与包装设计', cover: '/projects/hulu-xiaozao/media/shot-01-sm.webp', alt: '呼噜小灶猫粮包装正面，杏色袋身印有蓝色猫咪与猫爬架插画' },
       { slug: 'lumirose-atoll', name: 'LUMIROSE ATOLL 肤屿玫瑰', en: 'Skincare Packaging', type: '护肤系列包装设计', cover: '/assets/projects/lumirose-atoll/001.jpg', alt: 'LUMIROSE ATOLL 肤屿玫瑰粉色护肤系列包装' },
       { slug: 'hanging-coffee', name: 'Emotional Hanging Coffee', en: '挂耳咖啡', type: '包装设计效果图', cover: '/assets/projects/coffee-cover.lossless.webp', alt: '挂耳咖啡系列包装与杯装产品效果图' },
       { slug: 'craft-beer', name: '巨喜 JU XI｜绵酿奇遇', en: 'JU XI · Craft Beer Series', type: '系列包装设计', cover: '/assets/projects/juxi/001.lossless.webp', alt: '巨喜 JU XI 绵酿奇遇系列封面，小羊的果味精酿之旅' },
