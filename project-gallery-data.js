@@ -5,13 +5,13 @@ window.KALINA_PROJECT_GALLERY['hulu-xiaozao'] = [
     "title": "品牌与包装设计",
     "items": [
       {
-        "src": "/projects/hulu-xiaozao/media/shot-01.webp",
-        "preview": "/projects/hulu-xiaozao/media/shot-01.webp",
-        "thumb": "/projects/hulu-xiaozao/media/shot-01-sm.webp",
+        "src": "/projects/hulu-xiaozao/media/weekend-trip.webp",
+        "preview": "/projects/hulu-xiaozao/media/weekend-trip.webp",
+        "thumb": "/projects/hulu-xiaozao/media/weekend-trip-sm.webp",
         "width": 1536,
         "height": 1024,
-        "alt": "呼噜小灶猫粮包装正面，杏色袋身印着三只围绕猫爬架玩耍的猫",
-        "caption": "包装正面"
+        "alt": "出行前的玄关长凳上，呼噜小灶猫粮袋与蓝色帆布宠物旅行包、珊瑚色牵引绳和折叠水碗并排摆放",
+        "caption": "周末出行"
       },
       {
         "src": "/projects/hulu-xiaozao/media/brand-board.webp",
