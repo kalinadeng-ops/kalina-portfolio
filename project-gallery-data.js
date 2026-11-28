@@ -21,42 +21,6 @@ window.KALINA_PROJECT_GALLERY['hulu-xiaozao'] = [
         "height": 2400,
         "alt": "正面、喂养信息侧面、背面与品牌信息侧面等高排列",
         "caption": "包装四面总览"
-      },
-      {
-        "src": "/projects/hulu-xiaozao/media/flat-front.webp",
-        "preview": "/projects/hulu-xiaozao/media/flat-front-sm.webp",
-        "thumb": "/projects/hulu-xiaozao/media/flat-front-sm.webp",
-        "width": 1130,
-        "height": 2047,
-        "alt": "猫咪与猫爬架插画下方标有鸡肉配方和净含量",
-        "caption": "正面设计"
-      },
-      {
-        "src": "/projects/hulu-xiaozao/media/flat-feed.webp",
-        "preview": "/projects/hulu-xiaozao/media/flat-feed-sm.webp",
-        "thumb": "/projects/hulu-xiaozao/media/flat-feed-sm.webp",
-        "width": 587,
-        "height": 2048,
-        "alt": "珊瑚粉侧面上的保质期、喂养指导及储存条件",
-        "caption": "喂养信息侧面"
-      },
-      {
-        "src": "/projects/hulu-xiaozao/media/flat-back.webp",
-        "preview": "/projects/hulu-xiaozao/media/flat-back-sm.webp",
-        "thumb": "/projects/hulu-xiaozao/media/flat-back-sm.webp",
-        "width": 1177,
-        "height": 2048,
-        "alt": "杏色背面的食材图标、成分组成与成分分析表",
-        "caption": "背面设计"
-      },
-      {
-        "src": "/projects/hulu-xiaozao/media/flat-brand.webp",
-        "preview": "/projects/hulu-xiaozao/media/flat-brand-sm.webp",
-        "thumb": "/projects/hulu-xiaozao/media/flat-brand-sm.webp",
-        "width": 587,
-        "height": 2048,
-        "alt": "珊瑚粉侧面上的品牌、联系方式与生产资料",
-        "caption": "品牌信息侧面"
       }
     ]
   },

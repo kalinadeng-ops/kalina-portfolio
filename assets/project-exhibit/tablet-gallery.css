@@ -77,3 +77,7 @@
     }
   }
 }
+
+body.gallery-curated-page[data-project="hulu-xiaozao"][data-mobile-exhibit="album"] .album-stage {
+  aspect-ratio: 3 / 2;
+}
